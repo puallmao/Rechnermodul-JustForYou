@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{70F8E8FE-6792-4728-A6EC-37A2470EDD0D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Rechnermodul.Main</RootNamespace>
+    <AssemblyName>Rechnermodul.Main</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\View\FRM_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\View\FRM_Main.Designer.cs">
+      <DependentUpon>FRM_Main.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="src\View\FRM_Main.resx">
+      <DependentUpon>FRM_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Rechnermodul.Eingabemodul\Rechnermodul.Eingabemodul.csproj">
+      <Project>{082d17b2-d8eb-4666-99c3-6907860c8b66}</Project>
+      <Name>Rechnermodul.Eingabemodul</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Rechnermodul.Geometrie\Rechnermodul.Geometrie.csproj">
+      <Project>{eaaaee23-067e-4dbe-82b4-c80785fbe2db}</Project>
+      <Name>Rechnermodul.Geometrie</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Rechnermodul.Grundrechner\Rechnermodul.Grundrechner.csproj">
+      <Project>{3992760f-c3ec-4b7d-b47d-7f25457d42fd}</Project>
+      <Name>Rechnermodul.Grundrechner</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Rechnermodul.Informationstechnik\Rechnermodul.Informationstechnik.csproj">
+      <Project>{70f1308f-07a2-48ed-b036-c219b8c415c6}</Project>
+      <Name>Rechnermodul.Informationstechnik</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Rechnermodul.Kreditberechnung\Rechnermodul.Kreditberechnung.csproj">
+      <Project>{dc78e87c-0583-4e11-9005-ea102a75d935}</Project>
+      <Name>Rechnermodul.Kreditberechnung</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Rechnermodul.MathematischeFunktionen\Rechnermodul.MathematischeFunktionen.csproj">
+      <Project>{7f3d63f4-3deb-4732-a31b-5023ef220f18}</Project>
+      <Name>Rechnermodul.MathematischeFunktionen</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Rechnermodul.Prozentrechnung\Rechnermodul.Prozentrechnung.csproj">
+      <Project>{fa991783-5ba5-4ac8-a2ff-aaf9874f3b17}</Project>
+      <Name>Rechnermodul.Prozentrechnung</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Rechnermodul.Schule\Rechnermodul.Schule.csproj">
+      <Project>{050ea1c5-0e29-44fa-aafc-ac79d7878dc3}</Project>
+      <Name>Rechnermodul.Schule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Rechnermodul.Utils\Rechnermodul.Utils.csproj">
+      <Project>{85D8E49D-0B77-4F2B-B1F7-85CDBD8BD05D}</Project>
+      <Name>Rechnermodul.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
