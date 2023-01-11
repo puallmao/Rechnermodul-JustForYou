@@ -55,9 +55,10 @@ namespace Rechnermodul.Kreditberechnung.View
             // Kredit mit einer Rückzahlung
             if(calcValue == 1) 
             {
-                if (!String.IsNullOrEmpty(input_zinssatz.Text))
+                if (validZinssatz(Convert.ToDecimal(input_zinssatz.Text)))
                 {
-                    //validate beide Zahlen, zinssatz muss größer als >0 sein
+                    //validate beide Zahlen, zinssatz muss größer als >0 sein und insgesamt 6 Nachkommastellen
+
                 } 
                 else
                 {
@@ -67,7 +68,7 @@ namespace Rechnermodul.Kreditberechnung.View
             // Ratenkredit mit angegebener Laufzeit
             else if (calcValue == 2)
             {
-                if ((!String.IsNullOrEmpty(input_zinssatz.Text)) && (!String.IsNullOrEmpty(input_laufzeit.Text)))
+                if ((validZinssatz(Convert.ToDecimal(input_zinssatz.Text))) && (validLaufzeit(Convert.ToDecimal(input_laufzeit.Text))))
                 {
                     //validate beide Zahlen, zinssatz muss größer als >0 sein
                 }
@@ -79,7 +80,7 @@ namespace Rechnermodul.Kreditberechnung.View
             // Ratenkredit mit angegebener Ratenhöhe
             else if (calcValue == 3)
             {
-                if ((!String.IsNullOrEmpty(input_zinssatz.Text)) && (!String.IsNullOrEmpty(input_ratenhoehe.Text)))
+                if ((validZinssatz(Convert.ToDecimal(input_zinssatz.Text))) && (validRatenhoehe(Convert.ToDecimal(input_ratenhoehe.Text))))
                 {
                     //validate beide Zahlen, zinssatz muss größer als >0 sein
                 }
@@ -108,6 +109,37 @@ namespace Rechnermodul.Kreditberechnung.View
         private void input_ratenhoehe_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private bool validZinssatz(decimal zinssatz = 0)
+        {
+            // Zinssatz muss zwischen 0% und 100% liegen
+            if (zinssatz <= 0 && zinssatz > 100)
+            {
+                // Create Message box - FEHLER
+                return false;
+            }
+            return true;
+        }
+
+        private bool validRatenhoehe(decimal ratenhoehe = 0)
+        {
+            if (ratenhoehe <= 0)
+            {
+                // Create Message box - FEHLER
+                return false;
+            }
+            return true;
+        }
+        private bool validLaufzeit(decimal laufzeit = 0)
+        {
+            // laufzeit hat keine Nachkommastellen, keine halben Tage oder so...
+            if (laufzeit <= 0 || laufzeit != Convert.ToDecimal(Convert.ToInt64(laufzeit)))
+            {
+                // Create Message box - FEHLER
+                return false;
+            }
+            return true;
         }
     }
 }
