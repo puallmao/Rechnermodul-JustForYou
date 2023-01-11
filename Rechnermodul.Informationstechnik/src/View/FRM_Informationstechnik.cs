@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace Rechnermodul.Informationstechnik.View
 {
@@ -15,6 +7,30 @@ namespace Rechnermodul.Informationstechnik.View
         public FRM_Informationstechnik()
         {
             InitializeComponent();
+        }
+
+        private void BTN_dataSizeConversion_Click(object sender, System.EventArgs e)
+        {
+            LBL_noFunctionSelected.Visible = false;
+            UC_FileSizeCalculation.Visible = false;
+            UC_NumberSystemConversion.Visible = false;
+            UC_DataSizeConversion.Visible = true;
+        }
+
+        private void BTN_numberSystemConversion_Click(object sender, System.EventArgs e)
+        {
+            LBL_noFunctionSelected.Visible = false;
+            UC_FileSizeCalculation.Visible = false;
+            UC_DataSizeConversion.Visible = false;
+            UC_NumberSystemConversion.Visible = true;
+        }
+
+        private void BTN_fileSizeCalculation_Click(object sender, System.EventArgs e)
+        {
+            LBL_noFunctionSelected.Visible = false;
+            UC_NumberSystemConversion.Visible = false;
+            UC_DataSizeConversion.Visible = false;
+            UC_FileSizeCalculation.Visible = true;
         }
     }
 }

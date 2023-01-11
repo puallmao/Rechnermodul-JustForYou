@@ -1,19 +1,12 @@
 ﻿using Rechnermodul.Utils.Controller;
 using Rechnermodul.Utils.Shared;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Rechnermodul.Main.View
 {
     public partial class FRM_Main : Form
-    {        
+    {
         public FRM_Main()
         {
             InitializeComponent();
@@ -27,7 +20,7 @@ namespace Rechnermodul.Main.View
         private void startupWork()
         {
             // Display all modules
-            foreach(var module in ModuleController.getRegisteredModules())
+            foreach (var module in ModuleController.getRegisteredModules())
             {
                 if (module.Text == "Eingabemodul") { continue; }
                 if (module.Text == "Grundrechner") { continue; }
