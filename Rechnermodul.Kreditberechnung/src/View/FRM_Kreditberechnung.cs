@@ -4,9 +4,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Rechnermodul.Kreditberechnung.View
 {
@@ -52,48 +54,6 @@ namespace Rechnermodul.Kreditberechnung.View
 
         private void input_kreditbetrag_TextChanged(object sender, EventArgs e)
         {
-            // Kredit mit einer Rückzahlung
-            if(calcValue == 1) 
-            {
-                if (validZinssatz(Convert.ToDecimal(input_zinssatz.Text)))
-                {
-                    //validate beide Zahlen, zinssatz muss größer als >0 sein und insgesamt 6 Nachkommastellen
-
-                } 
-                else
-                {
-                    //Errorcode 1: nicht alle nötigen Parameter zur berechnung sind angegeben
-                }
-            } 
-            // Ratenkredit mit angegebener Laufzeit
-            else if (calcValue == 2)
-            {
-                if ((validZinssatz(Convert.ToDecimal(input_zinssatz.Text))) && (validLaufzeit(Convert.ToDecimal(input_laufzeit.Text))))
-                {
-                    //validate beide Zahlen, zinssatz muss größer als >0 sein
-                }
-                else
-                {
-                    //Errorcode 1: nicht alle nötigen Parameter zur berechnung sind angegeben
-                }
-            }
-            // Ratenkredit mit angegebener Ratenhöhe
-            else if (calcValue == 3)
-            {
-                if ((validZinssatz(Convert.ToDecimal(input_zinssatz.Text))) && (validRatenhoehe(Convert.ToDecimal(input_ratenhoehe.Text))))
-                {
-                    //validate beide Zahlen, zinssatz muss größer als >0 sein
-                }
-                else
-                {
-                    //Errorcode 1: nicht alle nötigen Parameter zur berechnung sind angegeben
-                }
-            } 
-            // unbekannte/nicht ausgewählte Berechnungsart
-            else
-            {
-                //return "Error: Berechnungsmethode unbekannt oder nicht ausgewählt"
-            }
         }
 
         private void input_zinssatz_TextChanged(object sender, EventArgs e)
@@ -133,13 +93,76 @@ namespace Rechnermodul.Kreditberechnung.View
         }
         private bool validLaufzeit(decimal laufzeit = 0)
         {
-            // laufzeit hat keine Nachkommastellen, keine halben Tage oder so...
+            // laufzeit hat keine Nachkommastellen, sind nur volle monate
             if (laufzeit <= 0 || laufzeit != Convert.ToDecimal(Convert.ToInt64(laufzeit)))
             {
                 // Create Message box - FEHLER
                 return false;
             }
             return true;
+        }
+
+        private bool validkreditbetrag(decimal kreditbetrag)
+        {
+            return true;
+        }
+
+        private void button_calc_Click(object sender, EventArgs e)
+        {
+            decimal testKreditbetragDecimal;
+
+            if (Decimal.TryParse(input_kreditbetrag.Text, out testKreditbetragDecimal) && validkreditbetrag(Convert.ToDecimal(input_kreditbetrag.Text)))
+            {
+                // Kredit mit einer Rückzahlung
+                decimal testZinssatz;
+                if (calcValue == 1)
+                {
+                    if (Decimal.TryParse(input_zinssatz.Text, out testZinssatz) && validZinssatz(Convert.ToDecimal(input_zinssatz.Text)))
+                    {
+                        //validate beide Zahlen, zinssatz muss größer als >0 sein und insgesamt 6 Nachkommastellen
+
+                    }
+                    else
+                    {
+                        //Errorcode 1: nicht alle nötigen Parameter zur berechnung sind angegeben
+                    }
+                }
+                // Ratenkredit mit angegebener Laufzeit
+                else if (calcValue == 2)
+                {
+                    decimal testLaufzeit;
+                    if (Decimal.TryParse(input_zinssatz.Text, out testZinssatz) && Decimal.TryParse(input_laufzeit.Text, out testLaufzeit) && (validZinssatz(Convert.ToDecimal(input_zinssatz.Text))) && (validLaufzeit(Convert.ToDecimal(input_laufzeit.Text))))
+                    {
+                        //validate beide Zahlen, zinssatz muss größer als >0 sein
+                    }
+                    else
+                    {
+                        //Errorcode 1: nicht alle nötigen Parameter zur berechnung sind angegeben
+                    }
+                }
+                // Ratenkredit mit angegebener Ratenhöhe
+                else if (calcValue == 3)
+                {
+                    decimal testRatenhoehe;
+                    if (Decimal.TryParse(input_zinssatz.Text, out testZinssatz) && Decimal.TryParse(input_ratenhoehe.Text, out testRatenhoehe) && (validZinssatz(Convert.ToDecimal(input_zinssatz.Text))) && (validRatenhoehe(Convert.ToDecimal(input_ratenhoehe.Text))))
+                    {
+                        //validate beide Zahlen, zinssatz muss größer als >0 sein
+                    }
+                    else
+                    {
+                        //Errorcode 1: nicht alle nötigen Parameter zur berechnung sind angegeben
+                    }
+                }
+                // unbekannte/nicht ausgewählte Berechnungsart
+                else
+                {
+                    //return "Error: Berechnungsmethode unbekannt oder nicht ausgewählt"
+                }
+            }
+            else
+            {
+                MessageBox.Show("Das ist doch alles toll hier");
+            }
         }
     }
 }

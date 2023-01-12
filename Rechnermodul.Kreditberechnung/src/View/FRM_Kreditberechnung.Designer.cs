@@ -40,6 +40,7 @@ namespace Rechnermodul.Kreditberechnung.View
             this.input_laufzeit = new System.Windows.Forms.TextBox();
             this.label_ratenhoehe = new System.Windows.Forms.Label();
             this.input_ratenhoehe = new System.Windows.Forms.TextBox();
+            this.button_calc = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button_creditOnePayment
@@ -139,11 +140,22 @@ namespace Rechnermodul.Kreditberechnung.View
             this.input_ratenhoehe.TabIndex = 9;
             this.input_ratenhoehe.TextChanged += new System.EventHandler(this.input_ratenhoehe_TextChanged);
             // 
+            // button_calc
+            // 
+            this.button_calc.Location = new System.Drawing.Point(380, 35);
+            this.button_calc.Name = "button_calc";
+            this.button_calc.Size = new System.Drawing.Size(161, 82);
+            this.button_calc.TabIndex = 10;
+            this.button_calc.Text = "Berechnen";
+            this.button_calc.UseVisualStyleBackColor = true;
+            this.button_calc.Click += new System.EventHandler(this.button_calc_Click);
+            // 
             // FRM_Kreditberechnung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button_calc);
             this.Controls.Add(this.input_ratenhoehe);
             this.Controls.Add(this.label_ratenhoehe);
             this.Controls.Add(this.input_laufzeit);
@@ -175,5 +187,6 @@ namespace Rechnermodul.Kreditberechnung.View
         private System.Windows.Forms.TextBox input_laufzeit;
         private System.Windows.Forms.Label label_ratenhoehe;
         private System.Windows.Forms.TextBox input_ratenhoehe;
+        private System.Windows.Forms.Button button_calc;
     }
 }
