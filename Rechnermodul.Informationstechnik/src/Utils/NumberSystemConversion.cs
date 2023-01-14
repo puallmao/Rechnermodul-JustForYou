@@ -12,7 +12,7 @@ namespace Rechnermodul.Informationstechnik.Utils
         /// <returns></returns>
         public static string binToHex(string input)
         {
-            return Convert.ToString(Convert.ToInt32(input, 2), 16);
+            return Convert.ToString(Convert.ToInt64(input, 2), 16);
         }
 
         /// <summary>
@@ -22,7 +22,7 @@ namespace Rechnermodul.Informationstechnik.Utils
         /// <returns></returns>
         public static string binToOct(string input)
         {
-            return Convert.ToString(Convert.ToInt32(input, 2), 8);
+            return Convert.ToString(Convert.ToInt64(input, 2), 8);
         }
 
         /// <summary>
@@ -32,7 +32,7 @@ namespace Rechnermodul.Informationstechnik.Utils
         /// <returns></returns>
         public static string binToDec(string input)
         {
-            return Convert.ToString(Convert.ToInt32(input, 2), 10);
+            return Convert.ToString(Convert.ToInt64(input, 2), 10);
         }
 
         /// <summary>
@@ -42,7 +42,18 @@ namespace Rechnermodul.Informationstechnik.Utils
         /// <returns></returns>
         public static string binToTer(string input)
         {
-            return toTernary(Convert.ToInt32(input, 2));
+            return toTernary(Convert.ToInt64(input, 2));
+        }
+
+        public static bool validateBinaryInput(string input)
+        {
+            string whitelist = "01";
+            foreach (var c in input.ToCharArray())
+            {
+                if (!whitelist.Contains(c.ToString()))
+                    return false; // Input not valid
+            }
+            return true; // Input valid
         }
         #endregion BIN
 
@@ -52,7 +63,7 @@ namespace Rechnermodul.Informationstechnik.Utils
         /// </summary>
         /// <param name="dec"></param>
         /// <returns></returns>
-        private static string toTernary(int dec)
+        private static string toTernary(long dec)
         {
             string ternary = string.Empty;
             bool isNegative = dec < 0;
@@ -64,7 +75,7 @@ namespace Rechnermodul.Informationstechnik.Utils
 
             while (dec > 0)
             {
-                int remainder = dec % 3;
+                long remainder = dec % 3;
                 ternary = remainder.ToString() + ternary;
                 dec /= 3;
             }
@@ -82,16 +93,16 @@ namespace Rechnermodul.Informationstechnik.Utils
         /// </summary>
         /// <param name="ternary"></param>
         /// <returns></returns>
-        private static int fromTernary(string ternary)
+        private static long fromTernary(string ternary)
         {
-            int dec = 0;
-            int power = 1;
+            long dec = 0;
+            long power = 1;
             bool isNegative = ternary[0] == '-';
-            int startIndex = isNegative ? 1 : 0;
+            long startIndex = isNegative ? 1 : 0;
 
             for (int i = ternary.Length - 1; i >= startIndex; i--)
             {
-                int digit = ternary[i] - '0';
+                long digit = ternary[i] - '0';
                 dec += digit * power;
                 power *= 3;
             }
@@ -138,6 +149,17 @@ namespace Rechnermodul.Informationstechnik.Utils
         {
             return Convert.ToString(fromTernary(input), 16);
         }
+
+        public static bool validateTernaryInput(string input)
+        {
+            string whitelist = "012";
+            foreach (var c in input.ToCharArray())
+            {
+                if (!whitelist.Contains(c.ToString()))
+                    return false; // Input not valid
+            }
+            return true; // Input valid
+        }
         #endregion TER
 
         #region OCT
@@ -146,9 +168,9 @@ namespace Rechnermodul.Informationstechnik.Utils
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        public static string octToHex(int input)
+        public static string octToHex(long input)
         {
-            return Convert.ToString(Convert.ToInt32(input.ToString(), 8), 16);
+            return Convert.ToString(Convert.ToInt64(input.ToString(), 8), 16);
         }
 
         /// <summary>
@@ -156,9 +178,9 @@ namespace Rechnermodul.Informationstechnik.Utils
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        public static string octToDec(int input)
+        public static string octToDec(long input)
         {
-            return Convert.ToString(Convert.ToInt32(input.ToString(), 8), 10);
+            return Convert.ToString(Convert.ToInt64(input.ToString(), 8), 10);
         }
 
         /// <summary>
@@ -166,9 +188,9 @@ namespace Rechnermodul.Informationstechnik.Utils
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        public static string octToBin(int input)
+        public static string octToBin(long input)
         {
-            return Convert.ToString(Convert.ToInt32(input.ToString(), 8), 2);
+            return Convert.ToString(Convert.ToInt64(input.ToString(), 8), 2);
         }
 
         /// <summary>
@@ -176,9 +198,20 @@ namespace Rechnermodul.Informationstechnik.Utils
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        public static string octToTer(int input)
+        public static string octToTer(long input)
         {
-            return toTernary(Convert.ToInt32(input.ToString(), 8));
+            return toTernary(Convert.ToInt64(input.ToString(), 8));
+        }
+
+        public static bool validateOctalInput(string input)
+        {
+            string whitelist = "01234567";
+            foreach (var c in input.ToCharArray())
+            {
+                if (!whitelist.Contains(c.ToString()))
+                    return false; // Input not valid
+            }
+            return true; // Input valid
         }
         #endregion OCT
 
@@ -188,9 +221,9 @@ namespace Rechnermodul.Informationstechnik.Utils
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        public static string decToHex(int input)
+        public static string decToHex(long input)
         {
-            return Convert.ToString(Convert.ToInt32(input), 16);
+            return Convert.ToString(Convert.ToInt64(input), 16);
         }
 
         /// <summary>
@@ -198,9 +231,9 @@ namespace Rechnermodul.Informationstechnik.Utils
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        public static string decToOct(int input)
+        public static string decToOct(long input)
         {
-            return Convert.ToString(Convert.ToInt32(input), 8);
+            return Convert.ToString(Convert.ToInt64(input), 8);
         }
 
         /// <summary>
@@ -208,9 +241,9 @@ namespace Rechnermodul.Informationstechnik.Utils
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        public static string decToBin(int input)
+        public static string decToBin(long input)
         {
-            return Convert.ToString(Convert.ToInt32(input), 2);
+            return Convert.ToString(Convert.ToInt64(input), 2);
         }
 
         /// <summary>
@@ -218,9 +251,20 @@ namespace Rechnermodul.Informationstechnik.Utils
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        public static string decToTer(int input)
+        public static string decToTer(long input)
         {
             return toTernary(input);
+        }
+
+        public static bool validateDecimalInput(string input)
+        {
+            string whitelist = "0123456789";
+            foreach (var c in input.ToCharArray())
+            {
+                if (!whitelist.Contains(c.ToString()))
+                    return false; // Input not valid
+            }
+            return true; // Input valid
         }
         #endregion DEC
 
@@ -230,9 +274,9 @@ namespace Rechnermodul.Informationstechnik.Utils
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        public static int hexToDec(string input)
+        public static long hexToDec(string input)
         {
-            return Convert.ToInt32(input, 16);
+            return Convert.ToInt64(input, 16);
         }
 
         /// <summary>
@@ -242,7 +286,7 @@ namespace Rechnermodul.Informationstechnik.Utils
         /// <returns></returns>
         public static string hexToOct(string input)
         {
-            return Convert.ToString(Convert.ToInt32(input, 16), 8);
+            return Convert.ToString(Convert.ToInt64(input, 16), 8);
         }
 
         /// <summary>
@@ -252,7 +296,7 @@ namespace Rechnermodul.Informationstechnik.Utils
         /// <returns></returns>
         public static string hexToBin(string input)
         {
-            return Convert.ToString(Convert.ToInt32(input, 16), 2);
+            return Convert.ToString(Convert.ToInt64(input, 16), 2);
         }
 
         /// <summary>
@@ -262,7 +306,18 @@ namespace Rechnermodul.Informationstechnik.Utils
         /// <returns></returns>
         public static string hexToTer(string input)
         {
-            return toTernary(Convert.ToInt32(input, 16));
+            return toTernary(Convert.ToInt64(input, 16));
+        }
+
+        public static bool validateHexInput(string input)
+        {
+            string whitelist = "0123456789ABCDEF";
+            foreach (var c in input.ToCharArray())
+            {
+                if (!whitelist.Contains(c.ToString()))
+                    return false; // Input not valid
+            }
+            return true; // Input valid
         }
         #endregion HEX
     }

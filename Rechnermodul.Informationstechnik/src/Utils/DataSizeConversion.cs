@@ -9,7 +9,7 @@ namespace Rechnermodul.Informationstechnik.Utils
         /// </summary>
         public enum decimalPrefixDataSizes
         {
-            Kiloyte,
+            KiloByte,
             MegaByte,
             GigaByte,
             TeraByte
@@ -23,7 +23,33 @@ namespace Rechnermodul.Informationstechnik.Utils
             KibiByte,
             MibiByte,
             GibiByte,
-            TibiByte
+            TebiByte
+        }
+
+        /// <summary>
+        /// Calculate the given size in bytes.
+        /// </summary>
+        /// <param name="binaryPrefixDataSize"></param>
+        /// <param name="size"></param>
+        /// <returns></returns>
+        public static ulong calculateBytes(binaryPrefixDataSizes binaryPrefixDataSize, decimal size)
+        {
+            if (size <= 0) { return 0; }
+            int power = (int)binaryPrefixDataSize + 1;
+            return (ulong)(size * (decimal)Math.Pow(1024, power));
+        }
+
+        /// <summary>
+        /// Calculate the given size in bytes.
+        /// </summary>
+        /// <param name="decimalPrefixDataSize"></param>
+        /// <param name="size"></param>
+        /// <returns></returns>
+        public static ulong calculateBytes(decimalPrefixDataSizes decimalPrefixDataSize, decimal size)
+        {
+            if (size <= 0) { return 0; }
+            int power = (int)decimalPrefixDataSize + 1;
+            return (ulong)(size * (decimal)Math.Pow(1000, power));
         }
 
         /// <summary>
@@ -32,13 +58,11 @@ namespace Rechnermodul.Informationstechnik.Utils
         /// <param name="decimalPrefixDataSize"></param>
         /// <param name="input"></param>
         /// <returns></returns>
-        public static double convertToBinaryPrefix(decimalPrefixDataSizes decimalPrefixDataSize, int input)
+        public static decimal convertToBinaryPrefix(binaryPrefixDataSizes binaryPrefixDataSize, ulong bytes)
         {
-            if (input < 0) { return 0; }
-
-            int power = (int)decimalPrefixDataSize + 1;
-            ulong byteSize = (ulong)(input * Math.Pow(1000, power));
-            return byteSize / Math.Pow(1024, power);
+            if (bytes <= 0) { return 0; }
+            int power = (int)binaryPrefixDataSize + 1;
+            return bytes / (decimal)Math.Pow(1024, power);
         }
 
         /// <summary>
@@ -47,13 +71,11 @@ namespace Rechnermodul.Informationstechnik.Utils
         /// <param name="binaryPrefixDataSize"></param>
         /// <param name="input"></param>
         /// <returns></returns>
-        public static double convertToDecimalPrefix(binaryPrefixDataSizes binaryPrefixDataSize, int input)
+        public static decimal convertToDecimalPrefix(decimalPrefixDataSizes decimalPrefixDataSize, ulong bytes)
         {
-            if (input < 0) { return 0; }
-
-            int power = (int)binaryPrefixDataSize + 1;
-            ulong byteSize = (ulong)(input * Math.Pow(1024, power));
-            return byteSize / Math.Pow(1000, power);
+            if (bytes <= 0) { return 0; }
+            int power = (int)decimalPrefixDataSize + 1;
+            return bytes / (decimal)Math.Pow(1000, power);
         }
     }
 }

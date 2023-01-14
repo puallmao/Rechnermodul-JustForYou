@@ -34,10 +34,10 @@ namespace Rechnermodul.Informationstechnik.View
             this.BTN_numberSystemConversion = new System.Windows.Forms.Button();
             this.BTN_dataSizeConversion = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.LBL_noFunctionSelected = new System.Windows.Forms.Label();
             this.UC_NumberSystemConversion = new Rechnermodul.Informationstechnik.src.View.UC_NumberSystemConversion();
             this.UC_FileSizeCalculation = new Rechnermodul.Informationstechnik.src.View.UC_FileSizeCalculation();
-            this.UC_DataSizeConversion = new Rechnermodul.Informationstechnik.src.View.UC_DataSizeConversion();
+            this.UC_DataSizeConversion = new Rechnermodul.Informationstechnik.View.UC_DataSizeConversion();
+            this.LBL_noFunctionSelected = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -97,17 +97,6 @@ namespace Rechnermodul.Informationstechnik.View
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Funktion";
             // 
-            // LBL_noFunctionSelected
-            // 
-            this.LBL_noFunctionSelected.AutoSize = true;
-            this.LBL_noFunctionSelected.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBL_noFunctionSelected.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.LBL_noFunctionSelected.Location = new System.Drawing.Point(167, 222);
-            this.LBL_noFunctionSelected.Name = "LBL_noFunctionSelected";
-            this.LBL_noFunctionSelected.Size = new System.Drawing.Size(213, 20);
-            this.LBL_noFunctionSelected.TabIndex = 0;
-            this.LBL_noFunctionSelected.Text = "Noch keine Funktion gewählt";
-            // 
             // UC_NumberSystemConversion
             // 
             this.UC_NumberSystemConversion.Location = new System.Drawing.Point(7, 26);
@@ -132,6 +121,17 @@ namespace Rechnermodul.Informationstechnik.View
             this.UC_DataSizeConversion.TabIndex = 1;
             this.UC_DataSizeConversion.Visible = false;
             // 
+            // LBL_noFunctionSelected
+            // 
+            this.LBL_noFunctionSelected.AutoSize = true;
+            this.LBL_noFunctionSelected.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_noFunctionSelected.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.LBL_noFunctionSelected.Location = new System.Drawing.Point(167, 222);
+            this.LBL_noFunctionSelected.Name = "LBL_noFunctionSelected";
+            this.LBL_noFunctionSelected.Size = new System.Drawing.Size(213, 20);
+            this.LBL_noFunctionSelected.TabIndex = 0;
+            this.LBL_noFunctionSelected.Text = "Noch keine Funktion gewählt";
+            // 
             // FRM_Informationstechnik
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -141,6 +141,7 @@ namespace Rechnermodul.Informationstechnik.View
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FRM_Informationstechnik";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Informationstechnik";
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -158,6 +159,6 @@ namespace Rechnermodul.Informationstechnik.View
         private System.Windows.Forms.Label LBL_noFunctionSelected;
         private src.View.UC_NumberSystemConversion UC_NumberSystemConversion;
         private src.View.UC_FileSizeCalculation UC_FileSizeCalculation;
-        private src.View.UC_DataSizeConversion UC_DataSizeConversion;
+        private View.UC_DataSizeConversion UC_DataSizeConversion;
     }
 }

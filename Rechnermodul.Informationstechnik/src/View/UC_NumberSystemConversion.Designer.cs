@@ -71,6 +71,7 @@ namespace Rechnermodul.Informationstechnik.src.View
             this.TB_binary.Name = "TB_binary";
             this.TB_binary.Size = new System.Drawing.Size(254, 26);
             this.TB_binary.TabIndex = 0;
+            this.TB_binary.TextChanged += new System.EventHandler(this.TB_binary_TextChanged);
             // 
             // groupBox2
             // 
@@ -88,6 +89,7 @@ namespace Rechnermodul.Informationstechnik.src.View
             this.TB_ternary.Name = "TB_ternary";
             this.TB_ternary.Size = new System.Drawing.Size(254, 26);
             this.TB_ternary.TabIndex = 1;
+            this.TB_ternary.TextChanged += new System.EventHandler(this.TB_ternary_TextChanged);
             // 
             // groupBox3
             // 
@@ -105,6 +107,7 @@ namespace Rechnermodul.Informationstechnik.src.View
             this.TB_octal.Name = "TB_octal";
             this.TB_octal.Size = new System.Drawing.Size(254, 26);
             this.TB_octal.TabIndex = 2;
+            this.TB_octal.TextChanged += new System.EventHandler(this.TB_octal_ValueChanged);
             // 
             // groupBox4
             // 
@@ -122,6 +125,7 @@ namespace Rechnermodul.Informationstechnik.src.View
             this.TB_decimal.Name = "TB_decimal";
             this.TB_decimal.Size = new System.Drawing.Size(254, 26);
             this.TB_decimal.TabIndex = 3;
+            this.TB_decimal.TextChanged += new System.EventHandler(this.TB_decimal_TextChanged);
             // 
             // BTN_clearInputs
             // 
@@ -131,6 +135,7 @@ namespace Rechnermodul.Informationstechnik.src.View
             this.BTN_clearInputs.TabIndex = 5;
             this.BTN_clearInputs.Text = "Eingaben zurücksetzen";
             this.BTN_clearInputs.UseVisualStyleBackColor = true;
+            this.BTN_clearInputs.Click += new System.EventHandler(this.BTN_clearInputs_Click);
             // 
             // UC_NumberSystemConversion
             // 

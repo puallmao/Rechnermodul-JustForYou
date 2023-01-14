@@ -34,7 +34,13 @@ namespace Rechnermodul.Main.View
 
         private void BTN_openSelectedModule_Click(object sender, EventArgs e)
         {
-            ModuleController.getModuleByName(LB_modules.SelectedItem.ToString()).ShowDialog();
+            if (LB_modules.SelectedItem != null)
+            {
+                try
+                {
+                    ModuleController.getModuleByName(LB_modules.SelectedItem.ToString()).ShowDialog();
+                } catch { }
+            }
         }
 
         private void BTN_openGrundrechner_Click(object sender, EventArgs e)

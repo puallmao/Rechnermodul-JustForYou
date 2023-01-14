@@ -1,5 +1,5 @@
 ﻿
-namespace Rechnermodul.Informationstechnik.src.View
+namespace Rechnermodul.Informationstechnik.View
 {
     partial class UC_DataSizeConversion
     {
@@ -41,13 +41,13 @@ namespace Rechnermodul.Informationstechnik.src.View
             this.NUM_inputKB = new System.Windows.Forms.NumericUpDown();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
+            this.NUM_inputTiB = new System.Windows.Forms.NumericUpDown();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
+            this.NUM_inputGiB = new System.Windows.Forms.NumericUpDown();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.numericUpDown7 = new System.Windows.Forms.NumericUpDown();
+            this.NUM_inputMiB = new System.Windows.Forms.NumericUpDown();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.numericUpDown8 = new System.Windows.Forms.NumericUpDown();
+            this.NUM_inputKiB = new System.Windows.Forms.NumericUpDown();
             this.groupBox7.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUM_inputTB)).BeginInit();
@@ -59,13 +59,13 @@ namespace Rechnermodul.Informationstechnik.src.View
             ((System.ComponentModel.ISupportInitialize)(this.NUM_inputKB)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUM_inputTiB)).BeginInit();
             this.groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUM_inputGiB)).BeginInit();
             this.groupBox8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUM_inputMiB)).BeginInit();
             this.groupBox9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUM_inputKiB)).BeginInit();
             this.SuspendLayout();
             // 
             // LBL_titel
@@ -103,10 +103,18 @@ namespace Rechnermodul.Informationstechnik.src.View
             // 
             // NUM_inputTB
             // 
+            this.NUM_inputTB.DecimalPlaces = 6;
             this.NUM_inputTB.Location = new System.Drawing.Point(6, 25);
+            this.NUM_inputTB.Maximum = new decimal(new int[] {
+            -1,
+            -1,
+            -1,
+            0});
             this.NUM_inputTB.Name = "NUM_inputTB";
             this.NUM_inputTB.Size = new System.Drawing.Size(240, 26);
             this.NUM_inputTB.TabIndex = 0;
+            this.NUM_inputTB.ThousandsSeparator = true;
+            this.NUM_inputTB.ValueChanged += new System.EventHandler(this.NUM_ValueChanged);
             // 
             // groupBox2
             // 
@@ -120,10 +128,18 @@ namespace Rechnermodul.Informationstechnik.src.View
             // 
             // NUM_inputGB
             // 
+            this.NUM_inputGB.DecimalPlaces = 6;
             this.NUM_inputGB.Location = new System.Drawing.Point(6, 25);
+            this.NUM_inputGB.Maximum = new decimal(new int[] {
+            -1,
+            -1,
+            -1,
+            0});
             this.NUM_inputGB.Name = "NUM_inputGB";
             this.NUM_inputGB.Size = new System.Drawing.Size(240, 26);
             this.NUM_inputGB.TabIndex = 0;
+            this.NUM_inputGB.ThousandsSeparator = true;
+            this.NUM_inputGB.ValueChanged += new System.EventHandler(this.NUM_ValueChanged);
             // 
             // groupBox1
             // 
@@ -137,10 +153,18 @@ namespace Rechnermodul.Informationstechnik.src.View
             // 
             // NUM_inputMB
             // 
+            this.NUM_inputMB.DecimalPlaces = 6;
             this.NUM_inputMB.Location = new System.Drawing.Point(6, 25);
+            this.NUM_inputMB.Maximum = new decimal(new int[] {
+            -1,
+            -1,
+            -1,
+            0});
             this.NUM_inputMB.Name = "NUM_inputMB";
             this.NUM_inputMB.Size = new System.Drawing.Size(240, 26);
             this.NUM_inputMB.TabIndex = 0;
+            this.NUM_inputMB.ThousandsSeparator = true;
+            this.NUM_inputMB.ValueChanged += new System.EventHandler(this.NUM_ValueChanged);
             // 
             // groupBox11
             // 
@@ -154,10 +178,18 @@ namespace Rechnermodul.Informationstechnik.src.View
             // 
             // NUM_inputKB
             // 
+            this.NUM_inputKB.DecimalPlaces = 6;
             this.NUM_inputKB.Location = new System.Drawing.Point(6, 25);
+            this.NUM_inputKB.Maximum = new decimal(new int[] {
+            -1,
+            -1,
+            -1,
+            0});
             this.NUM_inputKB.Name = "NUM_inputKB";
             this.NUM_inputKB.Size = new System.Drawing.Size(240, 26);
             this.NUM_inputKB.TabIndex = 0;
+            this.NUM_inputKB.ThousandsSeparator = true;
+            this.NUM_inputKB.ValueChanged += new System.EventHandler(this.NUM_ValueChanged);
             // 
             // groupBox4
             // 
@@ -174,24 +206,32 @@ namespace Rechnermodul.Informationstechnik.src.View
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.numericUpDown5);
+            this.groupBox5.Controls.Add(this.NUM_inputTiB);
             this.groupBox5.Location = new System.Drawing.Point(6, 241);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(252, 66);
             this.groupBox5.TabIndex = 5;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "TibiByte";
+            this.groupBox5.Text = "TebiByte";
             // 
-            // numericUpDown5
+            // NUM_inputTiB
             // 
-            this.numericUpDown5.Location = new System.Drawing.Point(6, 25);
-            this.numericUpDown5.Name = "numericUpDown5";
-            this.numericUpDown5.Size = new System.Drawing.Size(240, 26);
-            this.numericUpDown5.TabIndex = 0;
+            this.NUM_inputTiB.DecimalPlaces = 6;
+            this.NUM_inputTiB.Location = new System.Drawing.Point(6, 25);
+            this.NUM_inputTiB.Maximum = new decimal(new int[] {
+            -1,
+            -1,
+            -1,
+            0});
+            this.NUM_inputTiB.Name = "NUM_inputTiB";
+            this.NUM_inputTiB.Size = new System.Drawing.Size(240, 26);
+            this.NUM_inputTiB.TabIndex = 0;
+            this.NUM_inputTiB.ThousandsSeparator = true;
+            this.NUM_inputTiB.ValueChanged += new System.EventHandler(this.NUM_ValueChanged);
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.numericUpDown6);
+            this.groupBox6.Controls.Add(this.NUM_inputGiB);
             this.groupBox6.Location = new System.Drawing.Point(6, 169);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(252, 66);
@@ -199,16 +239,24 @@ namespace Rechnermodul.Informationstechnik.src.View
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "GibiByte";
             // 
-            // numericUpDown6
+            // NUM_inputGiB
             // 
-            this.numericUpDown6.Location = new System.Drawing.Point(6, 25);
-            this.numericUpDown6.Name = "numericUpDown6";
-            this.numericUpDown6.Size = new System.Drawing.Size(240, 26);
-            this.numericUpDown6.TabIndex = 0;
+            this.NUM_inputGiB.DecimalPlaces = 6;
+            this.NUM_inputGiB.Location = new System.Drawing.Point(6, 25);
+            this.NUM_inputGiB.Maximum = new decimal(new int[] {
+            -1,
+            -1,
+            -1,
+            0});
+            this.NUM_inputGiB.Name = "NUM_inputGiB";
+            this.NUM_inputGiB.Size = new System.Drawing.Size(240, 26);
+            this.NUM_inputGiB.TabIndex = 0;
+            this.NUM_inputGiB.ThousandsSeparator = true;
+            this.NUM_inputGiB.ValueChanged += new System.EventHandler(this.NUM_ValueChanged);
             // 
             // groupBox8
             // 
-            this.groupBox8.Controls.Add(this.numericUpDown7);
+            this.groupBox8.Controls.Add(this.NUM_inputMiB);
             this.groupBox8.Location = new System.Drawing.Point(6, 97);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(252, 66);
@@ -216,16 +264,24 @@ namespace Rechnermodul.Informationstechnik.src.View
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "MibiByte";
             // 
-            // numericUpDown7
+            // NUM_inputMiB
             // 
-            this.numericUpDown7.Location = new System.Drawing.Point(6, 25);
-            this.numericUpDown7.Name = "numericUpDown7";
-            this.numericUpDown7.Size = new System.Drawing.Size(240, 26);
-            this.numericUpDown7.TabIndex = 0;
+            this.NUM_inputMiB.DecimalPlaces = 6;
+            this.NUM_inputMiB.Location = new System.Drawing.Point(6, 25);
+            this.NUM_inputMiB.Maximum = new decimal(new int[] {
+            -1,
+            -1,
+            -1,
+            0});
+            this.NUM_inputMiB.Name = "NUM_inputMiB";
+            this.NUM_inputMiB.Size = new System.Drawing.Size(240, 26);
+            this.NUM_inputMiB.TabIndex = 0;
+            this.NUM_inputMiB.ThousandsSeparator = true;
+            this.NUM_inputMiB.ValueChanged += new System.EventHandler(this.NUM_ValueChanged);
             // 
             // groupBox9
             // 
-            this.groupBox9.Controls.Add(this.numericUpDown8);
+            this.groupBox9.Controls.Add(this.NUM_inputKiB);
             this.groupBox9.Location = new System.Drawing.Point(6, 25);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(252, 66);
@@ -233,12 +289,20 @@ namespace Rechnermodul.Informationstechnik.src.View
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "KibiByte";
             // 
-            // numericUpDown8
+            // NUM_inputKiB
             // 
-            this.numericUpDown8.Location = new System.Drawing.Point(6, 25);
-            this.numericUpDown8.Name = "numericUpDown8";
-            this.numericUpDown8.Size = new System.Drawing.Size(240, 26);
-            this.numericUpDown8.TabIndex = 0;
+            this.NUM_inputKiB.DecimalPlaces = 6;
+            this.NUM_inputKiB.Location = new System.Drawing.Point(6, 25);
+            this.NUM_inputKiB.Maximum = new decimal(new int[] {
+            -1,
+            -1,
+            -1,
+            0});
+            this.NUM_inputKiB.Name = "NUM_inputKiB";
+            this.NUM_inputKiB.Size = new System.Drawing.Size(240, 26);
+            this.NUM_inputKiB.TabIndex = 0;
+            this.NUM_inputKiB.ThousandsSeparator = true;
+            this.NUM_inputKiB.ValueChanged += new System.EventHandler(this.NUM_ValueChanged);
             // 
             // UC_DataSizeConversion
             // 
@@ -260,13 +324,13 @@ namespace Rechnermodul.Informationstechnik.src.View
             ((System.ComponentModel.ISupportInitialize)(this.NUM_inputKB)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUM_inputTiB)).EndInit();
             this.groupBox6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUM_inputGiB)).EndInit();
             this.groupBox8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUM_inputMiB)).EndInit();
             this.groupBox9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUM_inputKiB)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -283,15 +347,15 @@ namespace Rechnermodul.Informationstechnik.src.View
         private System.Windows.Forms.NumericUpDown NUM_inputGB;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.NumericUpDown NUM_inputMB;
-        private System.Windows.Forms.NumericUpDown NUM_inputKB;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.NumericUpDown numericUpDown5;
+        private System.Windows.Forms.NumericUpDown NUM_inputTiB;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.NumericUpDown numericUpDown6;
+        private System.Windows.Forms.NumericUpDown NUM_inputGiB;
         private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.NumericUpDown numericUpDown7;
+        private System.Windows.Forms.NumericUpDown NUM_inputMiB;
         private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.NumericUpDown numericUpDown8;
+        private System.Windows.Forms.NumericUpDown NUM_inputKiB;
+        private System.Windows.Forms.NumericUpDown NUM_inputKB;
     }
 }
