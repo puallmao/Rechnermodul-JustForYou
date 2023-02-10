@@ -63,6 +63,7 @@ namespace Rechnermodul.Eingabemodul.View
             this.TB_input.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TB_input.Location = new System.Drawing.Point(7, 25);
             this.TB_input.Name = "TB_input";
+            this.TB_input.ReadOnly = true;
             this.TB_input.Size = new System.Drawing.Size(336, 48);
             this.TB_input.TabIndex = 0;
             // 
@@ -336,7 +337,6 @@ namespace Rechnermodul.Eingabemodul.View
             this.Controls.Add(this.GB_input);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FRM_Eingabemodul";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Eingabemodul";
             this.GB_input.ResumeLayout(false);
             this.GB_input.PerformLayout();

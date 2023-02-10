@@ -20,6 +20,8 @@ namespace Rechnermodul.Eingabemodul.View
             InitializeComponent();
         }
 
+        public event EventHandler<string> EnterEvent;
+
         private void appendCharToInput(char input)
         {
             TB_input.Text = TB_input.Text + input.ToString();
@@ -201,6 +203,7 @@ namespace Rechnermodul.Eingabemodul.View
                 }
             }
         }
+
         private void BTN_inputReturn_Click(object sender, EventArgs e)
         {
             if (TB_input.Text.Length != 0)
@@ -232,12 +235,12 @@ namespace Rechnermodul.Eingabemodul.View
 
         private void BTN_inputEnter_Click(object sender, EventArgs e)
         {
-
+            EnterEvent(this, this.TB_input.Text);
         }
 
         private void BTN_inputNR_Click(object sender, EventArgs e)
         {
-
+            throw new NotImplementedException();
         }
     }
 }
