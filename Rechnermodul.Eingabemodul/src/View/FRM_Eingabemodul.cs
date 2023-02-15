@@ -236,6 +236,7 @@ namespace Rechnermodul.Eingabemodul.View
         private void BTN_inputEnter_Click(object sender, EventArgs e)
         {
             EnterEvent(this, this.TB_input.Text);
+            TB_input.Text = String.Empty;
         }
 
         private void BTN_inputNR_Click(object sender, EventArgs e)
