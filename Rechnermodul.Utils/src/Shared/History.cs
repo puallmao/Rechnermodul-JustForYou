@@ -112,7 +112,7 @@ namespace Rechnermodul.Utils.Shared
             try
             {
                 decryptedHistory = JsonSerializer.Deserialize<List<string>>(Encoding.UTF8.GetString(Encryption.Decrypt(data)));
-            } catch (Exception e) { }
+            } catch { }
             return decryptedHistory;
         }
     }

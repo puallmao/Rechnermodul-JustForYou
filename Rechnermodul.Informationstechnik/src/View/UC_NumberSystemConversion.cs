@@ -1,7 +1,7 @@
 ﻿using Rechnermodul.Informationstechnik.Utils;
 using System.Windows.Forms;
 
-namespace Rechnermodul.Informationstechnik.src.View
+namespace Rechnermodul.Informationstechnik.View
 {
     public partial class UC_NumberSystemConversion : UserControl
     {

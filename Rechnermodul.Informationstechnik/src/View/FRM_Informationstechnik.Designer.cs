@@ -34,8 +34,8 @@ namespace Rechnermodul.Informationstechnik.View
             this.BTN_numberSystemConversion = new System.Windows.Forms.Button();
             this.BTN_dataSizeConversion = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.UC_NumberSystemConversion = new Rechnermodul.Informationstechnik.src.View.UC_NumberSystemConversion();
-            this.UC_FileSizeCalculation = new Rechnermodul.Informationstechnik.src.View.UC_FileSizeCalculation();
+            this.UC_NumberSystemConversion = new Rechnermodul.Informationstechnik.View.UC_NumberSystemConversion();
+            this.UC_FileSizeCalculation = new Rechnermodul.Informationstechnik.View.UC_FileSizeCalculation();
             this.UC_DataSizeConversion = new Rechnermodul.Informationstechnik.View.UC_DataSizeConversion();
             this.LBL_noFunctionSelected = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -143,6 +143,8 @@ namespace Rechnermodul.Informationstechnik.View
             this.Name = "FRM_Informationstechnik";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Informationstechnik";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FRM_Informationstechnik_FormClosing);
+            this.Load += new System.EventHandler(this.FRM_Informationstechnik_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -157,8 +159,8 @@ namespace Rechnermodul.Informationstechnik.View
         private System.Windows.Forms.Button BTN_dataSizeConversion;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label LBL_noFunctionSelected;
-        private src.View.UC_NumberSystemConversion UC_NumberSystemConversion;
-        private src.View.UC_FileSizeCalculation UC_FileSizeCalculation;
+        private View.UC_NumberSystemConversion UC_NumberSystemConversion;
+        private View.UC_FileSizeCalculation UC_FileSizeCalculation;
         private View.UC_DataSizeConversion UC_DataSizeConversion;
     }
 }

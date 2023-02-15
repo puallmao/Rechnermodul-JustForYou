@@ -112,6 +112,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Rechnermodul.Eingabemodul\Rechnermodul.Eingabemodul.csproj">
+      <Project>{082d17b2-d8eb-4666-99c3-6907860c8b66}</Project>
+      <Name>Rechnermodul.Eingabemodul</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

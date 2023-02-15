@@ -1,5 +1,5 @@
 ﻿
-namespace Rechnermodul.Informationstechnik.src.View
+namespace Rechnermodul.Informationstechnik.View
 {
     partial class UC_NumberSystemConversion
     {

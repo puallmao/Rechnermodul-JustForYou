@@ -1,5 +1,5 @@
 ﻿
-namespace Rechnermodul.Informationstechnik.src.View
+namespace Rechnermodul.Informationstechnik.View
 {
     partial class UC_FileSizeCalculation
     {
@@ -33,6 +33,8 @@ namespace Rechnermodul.Informationstechnik.src.View
             this.RB_calcVideo = new System.Windows.Forms.RadioButton();
             this.RB_calcImage = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.GB_videoLength = new System.Windows.Forms.GroupBox();
+            this.NUM_videoLength = new System.Windows.Forms.NumericUpDown();
             this.GB_framesPerSecond = new System.Windows.Forms.GroupBox();
             this.NUM_framesPerSecond = new System.Windows.Forms.NumericUpDown();
             this.GB_imageWidth = new System.Windows.Forms.GroupBox();
@@ -45,10 +47,10 @@ namespace Rechnermodul.Informationstechnik.src.View
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.TB_size = new System.Windows.Forms.TextBox();
-            this.GB_videoLength = new System.Windows.Forms.GroupBox();
-            this.NUM_videoLength = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.GB_videoLength.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUM_videoLength)).BeginInit();
             this.GB_framesPerSecond.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUM_framesPerSecond)).BeginInit();
             this.GB_imageWidth.SuspendLayout();
@@ -59,8 +61,6 @@ namespace Rechnermodul.Informationstechnik.src.View
             ((System.ComponentModel.ISupportInitialize)(this.NUM_colorDepth)).BeginInit();
             this.groupBox7.SuspendLayout();
             this.groupBox11.SuspendLayout();
-            this.GB_videoLength.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NUM_videoLength)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -112,6 +112,30 @@ namespace Rechnermodul.Informationstechnik.src.View
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Eingaben";
+            // 
+            // GB_videoLength
+            // 
+            this.GB_videoLength.Controls.Add(this.NUM_videoLength);
+            this.GB_videoLength.Enabled = false;
+            this.GB_videoLength.Location = new System.Drawing.Point(394, 97);
+            this.GB_videoLength.Name = "GB_videoLength";
+            this.GB_videoLength.Size = new System.Drawing.Size(137, 66);
+            this.GB_videoLength.TabIndex = 6;
+            this.GB_videoLength.TabStop = false;
+            this.GB_videoLength.Text = "Länge in Sek.";
+            // 
+            // NUM_videoLength
+            // 
+            this.NUM_videoLength.Location = new System.Drawing.Point(6, 25);
+            this.NUM_videoLength.Maximum = new decimal(new int[] {
+            -1,
+            -1,
+            -1,
+            0});
+            this.NUM_videoLength.Name = "NUM_videoLength";
+            this.NUM_videoLength.Size = new System.Drawing.Size(110, 26);
+            this.NUM_videoLength.TabIndex = 1;
+            this.NUM_videoLength.ValueChanged += new System.EventHandler(this.setFileSize);
             // 
             // GB_framesPerSecond
             // 
@@ -243,30 +267,6 @@ namespace Rechnermodul.Informationstechnik.src.View
             this.TB_size.Size = new System.Drawing.Size(510, 26);
             this.TB_size.TabIndex = 0;
             // 
-            // GB_videoLength
-            // 
-            this.GB_videoLength.Controls.Add(this.NUM_videoLength);
-            this.GB_videoLength.Enabled = false;
-            this.GB_videoLength.Location = new System.Drawing.Point(394, 97);
-            this.GB_videoLength.Name = "GB_videoLength";
-            this.GB_videoLength.Size = new System.Drawing.Size(137, 66);
-            this.GB_videoLength.TabIndex = 6;
-            this.GB_videoLength.TabStop = false;
-            this.GB_videoLength.Text = "Länge in Sek.";
-            // 
-            // NUM_videoLength
-            // 
-            this.NUM_videoLength.Location = new System.Drawing.Point(6, 25);
-            this.NUM_videoLength.Maximum = new decimal(new int[] {
-            -1,
-            -1,
-            -1,
-            0});
-            this.NUM_videoLength.Name = "NUM_videoLength";
-            this.NUM_videoLength.Size = new System.Drawing.Size(110, 26);
-            this.NUM_videoLength.TabIndex = 1;
-            this.NUM_videoLength.ValueChanged += new System.EventHandler(this.setFileSize);
-            // 
             // UC_FileSizeCalculation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -280,6 +280,8 @@ namespace Rechnermodul.Informationstechnik.src.View
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.GB_videoLength.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.NUM_videoLength)).EndInit();
             this.GB_framesPerSecond.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.NUM_framesPerSecond)).EndInit();
             this.GB_imageWidth.ResumeLayout(false);
@@ -291,8 +293,6 @@ namespace Rechnermodul.Informationstechnik.src.View
             this.groupBox7.ResumeLayout(false);
             this.groupBox11.ResumeLayout(false);
             this.groupBox11.PerformLayout();
-            this.GB_videoLength.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.NUM_videoLength)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -301,22 +301,22 @@ namespace Rechnermodul.Informationstechnik.src.View
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton RB_calcVideo;
-        private System.Windows.Forms.RadioButton RB_calcImage;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label LBL_titel;
         private System.Windows.Forms.GroupBox GB_colorDepth;
-        private System.Windows.Forms.NumericUpDown NUM_colorDepth;
         private System.Windows.Forms.GroupBox GB_imageHeight;
-        private System.Windows.Forms.NumericUpDown NUM_imageHeight;
         private System.Windows.Forms.GroupBox GB_framesPerSecond;
-        private System.Windows.Forms.NumericUpDown NUM_framesPerSecond;
         private System.Windows.Forms.GroupBox GB_imageWidth;
-        private System.Windows.Forms.NumericUpDown NUM_imageWidth;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.GroupBox groupBox11;
         private System.Windows.Forms.TextBox TB_size;
         private System.Windows.Forms.GroupBox GB_videoLength;
-        private System.Windows.Forms.NumericUpDown NUM_videoLength;
+        public System.Windows.Forms.NumericUpDown NUM_colorDepth;
+        public System.Windows.Forms.NumericUpDown NUM_imageHeight;
+        public System.Windows.Forms.NumericUpDown NUM_framesPerSecond;
+        public System.Windows.Forms.NumericUpDown NUM_imageWidth;
+        public System.Windows.Forms.NumericUpDown NUM_videoLength;
+        public System.Windows.Forms.RadioButton RB_calcVideo;
+        public System.Windows.Forms.RadioButton RB_calcImage;
     }
 }
