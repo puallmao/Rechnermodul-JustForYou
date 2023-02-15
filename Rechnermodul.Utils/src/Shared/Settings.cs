@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Rechnermodul.Utils.src.Shared
+namespace Rechnermodul.Utils.Shared
 {
     public static class Settings
     {

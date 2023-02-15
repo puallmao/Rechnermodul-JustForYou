@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using Rechnermodul.Utils.Shared;
+using System.Windows.Forms;
 
 namespace Rechnermodul.Informationstechnik.View
 {
@@ -10,6 +11,12 @@ namespace Rechnermodul.Informationstechnik.View
         public FRM_Informationstechnik()
         {
             InitializeComponent();
+            Settings.SettingsChanged += SettingsChanged;
+        }
+
+        private void SettingsChanged(object sender, Settings.SettingsChangedArgs data)
+        {
+            Settings.ApplySettingsToForm(this, data);
         }
 
         private void FRM_Informationstechnik_Load(object sender, System.EventArgs e)

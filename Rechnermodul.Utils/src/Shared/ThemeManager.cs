@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Rechnermodul.Utils.src.Shared
+namespace Rechnermodul.Utils.Shared
 {
     public class ThemeManager
     {

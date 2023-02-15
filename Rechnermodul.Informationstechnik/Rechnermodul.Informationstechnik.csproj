@@ -117,6 +117,10 @@
       <Project>{082d17b2-d8eb-4666-99c3-6907860c8b66}</Project>
       <Name>Rechnermodul.Eingabemodul</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Rechnermodul.Utils\Rechnermodul.Utils.csproj">
+      <Project>{85D8E49D-0B77-4F2B-B1F7-85CDBD8BD05D}</Project>
+      <Name>Rechnermodul.Utils</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
