@@ -33,10 +33,17 @@ namespace Rechnermodul.Main.View
                 if (module.Text == "Grundrechner") { continue; }
                 LB_modules.Items.Add(module.Text);
             }
+
+            // Load History
+            History.load();
+
+            // Display History
+            History.getHistory().ForEach(x => LB_history.Items.Add(x));
         }
         private void BTN_deleteHistory_Click(object sender, EventArgs e)
         {
-            History.deleteCurrentHistory();
+            History.clear();
+            LB_history.Items.Clear();
         }
 
         private void BTN_openSelectedModule_Click(object sender, EventArgs e)
