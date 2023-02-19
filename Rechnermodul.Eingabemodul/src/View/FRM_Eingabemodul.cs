@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rechnermodul.Utils.Shared;
+using System;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -12,6 +13,13 @@ namespace Rechnermodul.Eingabemodul.View
         public FRM_Eingabemodul()
         {
             InitializeComponent();
+            SettingsManager.SettingsChanged += SettingsChanged;
+            SettingsManager.ApplySettingsToForm(this);
+        }
+
+        private void SettingsChanged(object sender, EventArgs e)
+        {
+            SettingsManager.ApplySettingsToForm(this);
         }
 
         public event EventHandler<string> EnterEvent;

@@ -11,7 +11,7 @@ namespace Rechnermodul.Utils.Shared
     /// </summary>
     public static class History
     {
-        private static string AppDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Rechnermodul-JustForYou";
+        private static readonly string AppDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Rechnermodul-JustForYou";
         private static readonly string FileName = "Rechnermodul-JustForYou-History.dat";
 
         /// <summary>
@@ -24,7 +24,7 @@ namespace Rechnermodul.Utils.Shared
         /// </summary>
         /// <param name="file"></param>
         /// <returns></returns>
-        public static void load()
+        public static void Load()
         {
             DirectoryInfo dir = new DirectoryInfo(AppDataPath);
             if (dir.Exists)
@@ -43,7 +43,7 @@ namespace Rechnermodul.Utils.Shared
         /// If the given file already exists it will be replaced.
         /// </summary>
         /// <param name="file"></param>
-        public static void save()
+        public static void Save()
         {
             string path = AppDataPath + "\\" + FileName;
             DirectoryInfo dir = new DirectoryInfo(AppDataPath);
@@ -58,10 +58,13 @@ namespace Rechnermodul.Utils.Shared
         /// Add a new Entry to the History.
         /// </summary>
         /// <param name="Entry"></param>
-        public static void addEntry(string Entry)
+        public static void AddEntry(string Entry)
         {
             if (!string.IsNullOrEmpty(Entry) && !string.IsNullOrWhiteSpace(Entry))
+            {
                 history.Add(Entry);
+                Save();
+            }
         }
 
         /// <summary>
@@ -76,7 +79,7 @@ namespace Rechnermodul.Utils.Shared
         /// <summary>
         /// Delete the current History.
         /// </summary>
-        public static void clear()
+        public static void Clear()
         {
             string path = AppDataPath + "\\" + FileName;
             FileInfo file = new FileInfo(path);
@@ -112,7 +115,7 @@ namespace Rechnermodul.Utils.Shared
             try
             {
                 decryptedHistory = JsonSerializer.Deserialize<List<string>>(Encoding.UTF8.GetString(Encryption.Decrypt(data)));
-            } catch { }
+            } catch { new FileInfo(AppDataPath + "\\" + FileName).Delete(); }
             return decryptedHistory;
         }
     }

@@ -10,8 +10,14 @@ namespace Rechnermodul.Main.View
         public FRM_Main()
         {
             InitializeComponent();
-
             startupWork();
+            SettingsManager.SettingsChanged += SettingsChanged;
+            SettingsManager.ApplySettingsToForm(this);
+        }
+
+        private void SettingsChanged(object sender, EventArgs e)
+        {
+            SettingsManager.ApplySettingsToForm(this);
         }
 
         /// <summary>
@@ -19,6 +25,9 @@ namespace Rechnermodul.Main.View
         /// </summary>
         private void startupWork()
         {
+            // Load Settings
+            SettingsManager.Load();
+
             // Display all modules
             foreach (var module in ModuleController.getRegisteredModules())
             {
@@ -28,14 +37,14 @@ namespace Rechnermodul.Main.View
             }
 
             // Load History
-            History.load();
+            History.Load();
 
             // Display History
             History.getHistory().ForEach(x => LB_history.Items.Add(x));
         }
         private void BTN_deleteHistory_Click(object sender, EventArgs e)
         {
-            History.clear();
+            History.Clear();
             LB_history.Items.Clear();
         }
 

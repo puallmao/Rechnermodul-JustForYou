@@ -337,6 +337,7 @@ namespace Rechnermodul.Eingabemodul.View
             this.Controls.Add(this.GB_input);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FRM_Eingabemodul";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Eingabemodul";
             this.GB_input.ResumeLayout(false);
             this.GB_input.PerformLayout();

@@ -11,8 +11,15 @@ namespace Rechnermodul.Utils.Shared
     {
         public class Theme
         {
-            public Color FontColor;
-            public Color BackgroundColor;
+            public Color FontColor { get; set; }
+            public Color BackgroundColor { get; set; }
+
+            public Theme()
+            {
+                FontColor = SystemColors.ControlText;
+                BackgroundColor = SystemColors.Control;
+            }
+
             public Theme(Color fontColor, Color backgroundColor)
             {
                 FontColor = fontColor;
@@ -22,8 +29,8 @@ namespace Rechnermodul.Utils.Shared
 
         public static class Themes
         {
-            public static readonly Theme WhiteMode = new Theme(default(Color), default(Color));
-            public static readonly Theme DarkMode = new Theme(SystemColors.ControlLightLight, SystemColors.Desktop);
+            public static readonly Theme WhiteMode = new Theme(SystemColors.ControlText, SystemColors.Control);
+            public static readonly Theme DarkMode = new Theme(SystemColors.ControlLightLight, Color.FromArgb(255, 32, 33, 36));
             public static readonly Theme FrogMode = new Theme(SystemColors.ControlText, Color.Lime);
         }
     }

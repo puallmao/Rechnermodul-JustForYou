@@ -43,9 +43,17 @@
   <ItemGroup>
     <Compile Include="src\Controller\ModelController.cs" />
     <Compile Include="src\Shared\Encryption.cs" />
+    <Compile Include="src\Shared\FontSerializable.cs" />
     <Compile Include="src\Shared\History.cs" />
+    <Compile Include="src\Shared\JsonColorConverter.cs" />
     <Compile Include="src\Shared\Settings.cs" />
     <Compile Include="src\Shared\ThemeManager.cs" />
+    <Compile Include="src\Shared\View\FRM_Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\Shared\View\FRM_Settings.Designer.cs">
+      <DependentUpon>FRM_Settings.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -55,6 +63,7 @@
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
+    <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
@@ -79,6 +88,12 @@
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="src\Shared\View\FRM_Settings.resx">
+      <DependentUpon>FRM_Settings.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

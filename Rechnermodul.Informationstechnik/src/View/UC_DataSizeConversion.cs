@@ -1,4 +1,5 @@
 ﻿using Rechnermodul.Informationstechnik.Utils;
+using Rechnermodul.Utils.Shared;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -83,6 +84,8 @@ namespace Rechnermodul.Informationstechnik.View
             // TebiByte
             if (control != NUM_inputTiB)
                 NUM_inputTiB.Value = DataSizeConversion.convertToBinaryPrefix(DataSizeConversion.binaryPrefixDataSizes.TebiByte, DataSizeConversion.calculateBytes(obj, size));
+
+            History.AddEntry($"Umrechnung: {size} {obj}");
         }
 
         private void clearNUM(NumericUpDown control)

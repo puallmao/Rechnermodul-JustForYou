@@ -1,4 +1,5 @@
 ﻿using Rechnermodul.Informationstechnik.Utils;
+using Rechnermodul.Utils.Shared;
 using System.Windows.Forms;
 
 namespace Rechnermodul.Informationstechnik.View
@@ -187,6 +188,7 @@ namespace Rechnermodul.Informationstechnik.View
             catch { }
 
             TB_binary.Text = output;
+            History.AddEntry($"{inputNumberSystem}: {input} zu Binär: {output}");
         }
 
         private void setTernary(string input, numberSystems inputNumberSystem)
@@ -205,6 +207,7 @@ namespace Rechnermodul.Informationstechnik.View
             catch { }
 
             TB_ternary.Text = output;
+            History.AddEntry($"{inputNumberSystem}: {input} zu Ternär: {output}");
         }
 
         private void setOctal(string input, numberSystems inputNumberSystem)
@@ -223,6 +226,7 @@ namespace Rechnermodul.Informationstechnik.View
             catch { }
 
             TB_octal.Text = output;
+            History.AddEntry($"{inputNumberSystem}: {input} zu Oktal: {output}");
         }
 
         private void setDecimal(string input, numberSystems inputNumberSystem)
@@ -241,6 +245,7 @@ namespace Rechnermodul.Informationstechnik.View
             catch { }
 
             TB_decimal.Text = output;
+            History.AddEntry($"{inputNumberSystem}: {input} zu Dezimal: {output}");
         }
 
         private void clearTextBoxInputs(TextBox blockedTextBox)
