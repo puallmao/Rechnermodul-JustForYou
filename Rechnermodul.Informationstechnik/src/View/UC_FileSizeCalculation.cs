@@ -73,10 +73,10 @@ namespace Rechnermodul.Informationstechnik.View
             TB_size.Text = $"{decSize} | {binSize}";
             if (NUM_colorDepth.Value != 0 && NUM_imageHeight.Value != 0 && NUM_imageWidth.Value != 0)
                 if (RB_calcImage.Checked)
-                    History.AddEntry($"Dateigröße berechnet: Farbtiefe: {NUM_colorDepth.Value}, Höhe: {NUM_imageHeight.Value}, Breite: {NUM_imageWidth.Value}");
+                    History.AddEntry($"Dateigröße berechnet: {decSize} | {binSize} (Farbtiefe: {NUM_colorDepth.Value}, Höhe: {NUM_imageHeight.Value}, Breite: {NUM_imageWidth.Value})");
                 else
                     if (NUM_framesPerSecond.Value != 0 && NUM_videoLength.Value != 0)
-                    History.AddEntry($"Videogröße berechnet: Farbtiefe: {NUM_colorDepth.Value}, Höhe: {NUM_imageHeight.Value}, Breite: {NUM_imageWidth.Value}, FPS: {NUM_framesPerSecond.Value}, Videolänge: {NUM_videoLength.Value}");
+                    History.AddEntry($"Videogröße berechnet: {decSize} | {binSize} (Farbtiefe: {NUM_colorDepth.Value}, Höhe: {NUM_imageHeight.Value}, Breite: {NUM_imageWidth.Value}, FPS: {NUM_framesPerSecond.Value}, Videolänge: {NUM_videoLength.Value})");
         }
     }
 }
