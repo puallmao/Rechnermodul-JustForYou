@@ -106,10 +106,10 @@ namespace Rechnermodul.Informationstechnik.View
             this.NUM_inputTB.DecimalPlaces = 6;
             this.NUM_inputTB.Location = new System.Drawing.Point(6, 25);
             this.NUM_inputTB.Maximum = new decimal(new int[] {
-            -1,
-            -1,
-            -1,
-            0});
+            0,
+            128,
+            0,
+            393216});
             this.NUM_inputTB.Name = "NUM_inputTB";
             this.NUM_inputTB.Size = new System.Drawing.Size(240, 26);
             this.NUM_inputTB.TabIndex = 0;
@@ -131,10 +131,10 @@ namespace Rechnermodul.Informationstechnik.View
             this.NUM_inputGB.DecimalPlaces = 6;
             this.NUM_inputGB.Location = new System.Drawing.Point(6, 25);
             this.NUM_inputGB.Maximum = new decimal(new int[] {
-            -1,
-            -1,
-            -1,
-            0});
+            0,
+            128000,
+            0,
+            393216});
             this.NUM_inputGB.Name = "NUM_inputGB";
             this.NUM_inputGB.Size = new System.Drawing.Size(240, 26);
             this.NUM_inputGB.TabIndex = 0;
@@ -156,9 +156,9 @@ namespace Rechnermodul.Informationstechnik.View
             this.NUM_inputMB.DecimalPlaces = 6;
             this.NUM_inputMB.Location = new System.Drawing.Point(6, 25);
             this.NUM_inputMB.Maximum = new decimal(new int[] {
-            -1,
-            -1,
-            -1,
+            0,
+            128,
+            0,
             0});
             this.NUM_inputMB.Name = "NUM_inputMB";
             this.NUM_inputMB.Size = new System.Drawing.Size(240, 26);
@@ -181,9 +181,9 @@ namespace Rechnermodul.Informationstechnik.View
             this.NUM_inputKB.DecimalPlaces = 6;
             this.NUM_inputKB.Location = new System.Drawing.Point(6, 25);
             this.NUM_inputKB.Maximum = new decimal(new int[] {
-            -1,
-            -1,
-            -1,
+            0,
+            128000,
+            0,
             0});
             this.NUM_inputKB.Name = "NUM_inputKB";
             this.NUM_inputKB.Size = new System.Drawing.Size(240, 26);
@@ -219,9 +219,9 @@ namespace Rechnermodul.Informationstechnik.View
             this.NUM_inputTiB.DecimalPlaces = 6;
             this.NUM_inputTiB.Location = new System.Drawing.Point(6, 25);
             this.NUM_inputTiB.Maximum = new decimal(new int[] {
-            -1,
-            -1,
-            -1,
+            500000,
+            0,
+            0,
             0});
             this.NUM_inputTiB.Name = "NUM_inputTiB";
             this.NUM_inputTiB.Size = new System.Drawing.Size(240, 26);
@@ -244,9 +244,9 @@ namespace Rechnermodul.Informationstechnik.View
             this.NUM_inputGiB.DecimalPlaces = 6;
             this.NUM_inputGiB.Location = new System.Drawing.Point(6, 25);
             this.NUM_inputGiB.Maximum = new decimal(new int[] {
-            -1,
-            -1,
-            -1,
+            512000000,
+            0,
+            0,
             0});
             this.NUM_inputGiB.Name = "NUM_inputGiB";
             this.NUM_inputGiB.Size = new System.Drawing.Size(240, 26);
@@ -262,16 +262,16 @@ namespace Rechnermodul.Informationstechnik.View
             this.groupBox8.Size = new System.Drawing.Size(252, 66);
             this.groupBox8.TabIndex = 3;
             this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "MibiByte";
+            this.groupBox8.Text = "MebiByte";
             // 
             // NUM_inputMiB
             // 
             this.NUM_inputMiB.DecimalPlaces = 6;
             this.NUM_inputMiB.Location = new System.Drawing.Point(6, 25);
             this.NUM_inputMiB.Maximum = new decimal(new int[] {
-            -1,
-            -1,
-            -1,
+            301989888,
+            122,
+            0,
             0});
             this.NUM_inputMiB.Name = "NUM_inputMiB";
             this.NUM_inputMiB.Size = new System.Drawing.Size(240, 26);
@@ -294,9 +294,9 @@ namespace Rechnermodul.Informationstechnik.View
             this.NUM_inputKiB.DecimalPlaces = 6;
             this.NUM_inputKiB.Location = new System.Drawing.Point(6, 25);
             this.NUM_inputKiB.Maximum = new decimal(new int[] {
-            -1,
-            -1,
-            -1,
+            0,
+            125000,
+            0,
             0});
             this.NUM_inputKiB.Name = "NUM_inputKiB";
             this.NUM_inputKiB.Size = new System.Drawing.Size(240, 26);

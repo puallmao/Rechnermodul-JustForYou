@@ -128,9 +128,9 @@ namespace Rechnermodul.Informationstechnik.View
             // 
             this.NUM_videoLength.Location = new System.Drawing.Point(6, 25);
             this.NUM_videoLength.Maximum = new decimal(new int[] {
-            -1,
-            -1,
-            -1,
+            10000000,
+            0,
+            0,
             0});
             this.NUM_videoLength.Name = "NUM_videoLength";
             this.NUM_videoLength.Size = new System.Drawing.Size(110, 26);
@@ -152,9 +152,9 @@ namespace Rechnermodul.Informationstechnik.View
             // 
             this.NUM_framesPerSecond.Location = new System.Drawing.Point(6, 25);
             this.NUM_framesPerSecond.Maximum = new decimal(new int[] {
-            -1,
-            -1,
-            -1,
+            10000000,
+            0,
+            0,
             0});
             this.NUM_framesPerSecond.Name = "NUM_framesPerSecond";
             this.NUM_framesPerSecond.Size = new System.Drawing.Size(110, 26);
@@ -175,9 +175,9 @@ namespace Rechnermodul.Informationstechnik.View
             // 
             this.NUM_imageWidth.Location = new System.Drawing.Point(6, 25);
             this.NUM_imageWidth.Maximum = new decimal(new int[] {
-            -1,
-            -1,
-            -1,
+            10000000,
+            0,
+            0,
             0});
             this.NUM_imageWidth.Name = "NUM_imageWidth";
             this.NUM_imageWidth.Size = new System.Drawing.Size(252, 26);
@@ -198,9 +198,9 @@ namespace Rechnermodul.Informationstechnik.View
             // 
             this.NUM_imageHeight.Location = new System.Drawing.Point(6, 25);
             this.NUM_imageHeight.Maximum = new decimal(new int[] {
-            -1,
-            -1,
-            -1,
+            10000000,
+            0,
+            0,
             0});
             this.NUM_imageHeight.Name = "NUM_imageHeight";
             this.NUM_imageHeight.Size = new System.Drawing.Size(240, 26);
@@ -221,9 +221,9 @@ namespace Rechnermodul.Informationstechnik.View
             // 
             this.NUM_colorDepth.Location = new System.Drawing.Point(6, 25);
             this.NUM_colorDepth.Maximum = new decimal(new int[] {
-            -1,
-            -1,
-            -1,
+            10000000,
+            0,
+            0,
             0});
             this.NUM_colorDepth.Name = "NUM_colorDepth";
             this.NUM_colorDepth.Size = new System.Drawing.Size(240, 26);
@@ -264,6 +264,7 @@ namespace Rechnermodul.Informationstechnik.View
             // 
             this.TB_size.Location = new System.Drawing.Point(6, 25);
             this.TB_size.Name = "TB_size";
+            this.TB_size.ReadOnly = true;
             this.TB_size.Size = new System.Drawing.Size(510, 26);
             this.TB_size.TabIndex = 0;
             // 

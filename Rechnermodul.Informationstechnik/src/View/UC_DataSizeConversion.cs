@@ -22,7 +22,7 @@ namespace Rechnermodul.Informationstechnik.View
             dictionary.Add(NUM_inputKB, DataSizeConversion.decimalPrefixDataSizes.KiloByte);
             dictionary.Add(NUM_inputKiB, DataSizeConversion.binaryPrefixDataSizes.KibiByte);
             dictionary.Add(NUM_inputMB, DataSizeConversion.decimalPrefixDataSizes.MegaByte);
-            dictionary.Add(NUM_inputMiB, DataSizeConversion.binaryPrefixDataSizes.MibiByte);
+            dictionary.Add(NUM_inputMiB, DataSizeConversion.binaryPrefixDataSizes.MebiByte);
             dictionary.Add(NUM_inputGB, DataSizeConversion.decimalPrefixDataSizes.GigaByte);
             dictionary.Add(NUM_inputGiB, DataSizeConversion.binaryPrefixDataSizes.GibiByte);
             dictionary.Add(NUM_inputTB, DataSizeConversion.decimalPrefixDataSizes.TeraByte);
@@ -65,9 +65,9 @@ namespace Rechnermodul.Informationstechnik.View
             if (control != NUM_inputMB)
                 NUM_inputMB.Value = DataSizeConversion.convertToDecimalPrefix(DataSizeConversion.decimalPrefixDataSizes.MegaByte, DataSizeConversion.calculateBytes(obj, size));
 
-            // MibiByte
+            // MebiByte
             if (control != NUM_inputMiB)
-                NUM_inputMiB.Value = DataSizeConversion.convertToBinaryPrefix(DataSizeConversion.binaryPrefixDataSizes.MibiByte, DataSizeConversion.calculateBytes(obj, size));
+                NUM_inputMiB.Value = DataSizeConversion.convertToBinaryPrefix(DataSizeConversion.binaryPrefixDataSizes.MebiByte, DataSizeConversion.calculateBytes(obj, size));
 
             // GigaByte
             if (control != NUM_inputGB)

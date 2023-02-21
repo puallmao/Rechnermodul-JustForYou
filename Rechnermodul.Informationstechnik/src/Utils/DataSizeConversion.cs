@@ -21,7 +21,7 @@ namespace Rechnermodul.Informationstechnik.Utils
         public enum binaryPrefixDataSizes
         {
             KibiByte,
-            MibiByte,
+            MebiByte,
             GibiByte,
             TebiByte
         }

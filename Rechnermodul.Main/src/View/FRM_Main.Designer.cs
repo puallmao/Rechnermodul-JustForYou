@@ -111,6 +111,7 @@ namespace Rechnermodul.Main.View
             this.LB_modules.Name = "LB_modules";
             this.LB_modules.Size = new System.Drawing.Size(232, 184);
             this.LB_modules.TabIndex = 4;
+            this.LB_modules.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.LB_modules_MouseDoubleClick);
             // 
             // FRM_Main
             // 
@@ -122,7 +123,7 @@ namespace Rechnermodul.Main.View
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FRM_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FRM_Main";
+            this.Text = "Rechnermodul-JustForYou";
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);

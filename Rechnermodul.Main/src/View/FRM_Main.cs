@@ -63,5 +63,17 @@ namespace Rechnermodul.Main.View
         {
             ModuleController.getModuleByName("Grundrechner").ShowDialog();
         }
+
+        private void LB_modules_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (LB_modules.SelectedItem != null)
+            {
+                try
+                {
+                    ModuleController.getModuleByName(LB_modules.SelectedItem.ToString()).ShowDialog();
+                }
+                catch { }
+            }
+        }
     }
 }

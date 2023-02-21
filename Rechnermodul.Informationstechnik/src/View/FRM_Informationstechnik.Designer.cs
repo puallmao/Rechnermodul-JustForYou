@@ -60,7 +60,7 @@ namespace Rechnermodul.Informationstechnik.View
             this.BTN_fileSizeCalculation.Name = "BTN_fileSizeCalculation";
             this.BTN_fileSizeCalculation.Size = new System.Drawing.Size(170, 55);
             this.BTN_fileSizeCalculation.TabIndex = 2;
-            this.BTN_fileSizeCalculation.Text = "Datenmenge umrechnen";
+            this.BTN_fileSizeCalculation.Text = "Dateigrößen berechnen";
             this.BTN_fileSizeCalculation.UseVisualStyleBackColor = true;
             this.BTN_fileSizeCalculation.Click += new System.EventHandler(this.BTN_fileSizeCalculation_Click);
             // 
@@ -80,7 +80,7 @@ namespace Rechnermodul.Informationstechnik.View
             this.BTN_dataSizeConversion.Name = "BTN_dataSizeConversion";
             this.BTN_dataSizeConversion.Size = new System.Drawing.Size(170, 55);
             this.BTN_dataSizeConversion.TabIndex = 0;
-            this.BTN_dataSizeConversion.Text = "Dateigrößen berechnen";
+            this.BTN_dataSizeConversion.Text = "Datenmengen umrechnen";
             this.BTN_dataSizeConversion.UseVisualStyleBackColor = true;
             this.BTN_dataSizeConversion.Click += new System.EventHandler(this.BTN_dataSizeConversion_Click);
             // 

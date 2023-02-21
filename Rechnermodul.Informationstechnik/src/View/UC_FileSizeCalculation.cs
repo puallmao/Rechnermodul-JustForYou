@@ -57,7 +57,7 @@ namespace Rechnermodul.Informationstechnik.View
             else if (bytes >= 1000000 && bytes < 1000000000)
             {
                 decSize = DataSizeConversion.convertToDecimalPrefix(DataSizeConversion.decimalPrefixDataSizes.MegaByte, bytes).ToString() + " MB";
-                binSize = DataSizeConversion.convertToBinaryPrefix(DataSizeConversion.binaryPrefixDataSizes.MibiByte, bytes).ToString() + " MiB";
+                binSize = DataSizeConversion.convertToBinaryPrefix(DataSizeConversion.binaryPrefixDataSizes.MebiByte, bytes).ToString() + " MiB";
             }
             else if (bytes >= 1000000000 && bytes < 1000000000000)
             {
