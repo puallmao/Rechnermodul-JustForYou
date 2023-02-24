@@ -1,4 +1,5 @@
 ﻿using Rechnermodul.Prozentrechnung.Utils;
+using Rechnermodul.Utils.Shared;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,7 +21,16 @@ namespace Rechnermodul.Prozentrechnung.View
 
         private void setValue(object sender, EventArgs e)
         {
-            calcResult();
+            if (sender is RadioButton)
+            {
+                RadioButton control = (RadioButton)sender;
+                if (control.Checked)
+                    calcResult();
+            }
+            else
+            {
+                calcResult();
+            }
         }
 
         private void calcResult()
@@ -30,11 +40,20 @@ namespace Rechnermodul.Prozentrechnung.View
             decimal percentage = NUM_percentage.Value;
 
             if (RB_addPercentage.Checked)
+            {
                 result = PercentageCalculation1.AddPercentage(value, percentage);
+                History.AddEntry($"{percentage}% zum Grundwert {value} = {result}");
+            }
             else if (RB_subtractPercentage.Checked)
+            {
                 result = PercentageCalculation1.SubtractPercentage(value, percentage);
+                History.AddEntry($"{percentage}% weg vom Grundwert {value} = {result}");
+            }
             else
+            {
                 result = PercentageCalculation1.CalcPercentageValue(value, percentage);
+                History.AddEntry($"{percentage}% vom Grundwert {value} = {result}");
+            }
 
             TB_result.Text = result.ToString();
         }

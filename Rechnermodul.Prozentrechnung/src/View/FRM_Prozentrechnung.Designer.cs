@@ -150,6 +150,7 @@ namespace Rechnermodul.Prozentrechnung.View
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Prozentrechnung";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FRM_Prozentrechnung_FormClosing);
+            this.Load += new System.EventHandler(this.FRM_Prozentrechnung_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

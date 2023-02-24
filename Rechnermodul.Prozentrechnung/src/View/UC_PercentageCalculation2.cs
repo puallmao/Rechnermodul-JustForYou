@@ -1,12 +1,6 @@
 ﻿using Rechnermodul.Prozentrechnung.Utils;
+using Rechnermodul.Utils.Shared;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Rechnermodul.Prozentrechnung.View
@@ -30,6 +24,7 @@ namespace Rechnermodul.Prozentrechnung.View
             decimal percentageValue = NUM_percentageValue.Value;
 
             result = PercentageCalculation2.CalculatePercentage(value, percentageValue);
+            History.AddEntry($"{percentageValue} vom Grundwert {value} = {result}%");
             TB_result.Text = result.ToString();
         }
     }

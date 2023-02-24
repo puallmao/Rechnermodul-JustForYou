@@ -13,11 +13,17 @@ namespace Rechnermodul.Main.View
             startupWork();
             SettingsManager.SettingsChanged += SettingsChanged;
             SettingsManager.ApplySettingsToForm(this);
+            History.NewEntryEvent += NewEntryEvent;
         }
 
         private void SettingsChanged(object sender, EventArgs e)
         {
             SettingsManager.ApplySettingsToForm(this);
+        }
+
+        private void NewEntryEvent(object sender, string entry)
+        {
+            LB_history.Items.Add(entry);
         }
 
         /// <summary>

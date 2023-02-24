@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rechnermodul.Utils.Shared;
+using System;
 
 namespace Rechnermodul.Informationstechnik.Utils
 {
@@ -13,7 +14,7 @@ namespace Rechnermodul.Informationstechnik.Utils
         /// <param name="imageNum"></param>
         public static ulong calculateImageSize(int colorDepth, int width, int heigth)
         {
-            return (ulong)((colorDepth * (width * heigth)) / 8);
+            return (ulong)Math4U.Ceiling(((colorDepth * (width * heigth)) / 8));
         }
 
         /// <summary>
@@ -27,7 +28,7 @@ namespace Rechnermodul.Informationstechnik.Utils
         /// <returns></returns>
         public static ulong calculateVideoSize(int colorDepth, int width, int height, int framesPerSecond, double lengthInSeconds)
         {
-            return (ulong)Math.Ceiling((((colorDepth * (width * height)) / 8) * framesPerSecond) * lengthInSeconds);
+            return (ulong)Math4U.Ceiling((((colorDepth * (width * height)) / 8) * framesPerSecond) * lengthInSeconds);
         }
     }
 }

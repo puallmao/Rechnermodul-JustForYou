@@ -14,6 +14,8 @@ namespace Rechnermodul.Utils.Shared
         private static readonly string AppDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Rechnermodul-JustForYou";
         private static readonly string FileName = "Rechnermodul-JustForYou-History.dat";
 
+        public static EventHandler<string> NewEntryEvent;
+       
         /// <summary>
         /// Calculation history
         /// </summary>
@@ -64,6 +66,7 @@ namespace Rechnermodul.Utils.Shared
             {
                 history.Add(Entry);
                 Save();
+                if (NewEntryEvent != null) NewEntryEvent(null, Entry);
             }
         }
 

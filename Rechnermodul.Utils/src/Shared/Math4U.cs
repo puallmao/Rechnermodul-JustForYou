@@ -10,26 +10,32 @@ namespace Rechnermodul.Utils.Shared
     {
         public static float Round(float n, int decimals)
         {
-            float d = Pow(10, decimals);
+            float d = (float)Pow(10, decimals);
             int i = (int)((n * d) + 0.5f);
             return i / d;
         }
 
         public static decimal Round(decimal n, int decimals)
         {
-            decimal d = Pow(10, decimals);
+            decimal d = (decimal)Pow(10, decimals);
             int i = (int)((n * d) + 0.5m);
             return i / d;
         }
 
-        public static int Pow(int x, int y)
+        public static double Pow(double x, double y)
         {
-            int n = x;
+            double n = x;
             for (int i = 1; i < y; i++)
             {
                 n *= x;
             }
             return n;
+        }
+
+        public static double Ceiling(double n)
+        {
+            int x = ((int)n) + 1;
+            return (double)x;
         }
     }
 }

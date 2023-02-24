@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rechnermodul.Utils.Shared;
+using System;
 
 namespace Rechnermodul.Informationstechnik.Utils
 {
@@ -36,7 +37,7 @@ namespace Rechnermodul.Informationstechnik.Utils
         {
             if (size <= 0) { return 0; }
             int power = (int)binaryPrefixDataSize + 1;
-            return (ulong)(size * (decimal)Math.Pow(1024, power));
+            return (ulong)(size * (decimal)Math4U.Pow(1024, power));
         }
 
         /// <summary>
@@ -49,7 +50,7 @@ namespace Rechnermodul.Informationstechnik.Utils
         {
             if (size <= 0) { return 0; }
             int power = (int)decimalPrefixDataSize + 1;
-            return (ulong)(size * (decimal)Math.Pow(1000, power));
+            return (ulong)(size * (decimal)Math4U.Pow(1000, power));
         }
 
         /// <summary>
@@ -62,7 +63,7 @@ namespace Rechnermodul.Informationstechnik.Utils
         {
             if (bytes <= 0) { return 0; }
             int power = (int)binaryPrefixDataSize + 1;
-            return bytes / (decimal)Math.Pow(1024, power);
+            return bytes / (decimal)Math4U.Pow(1024, power);
         }
 
         /// <summary>
@@ -75,7 +76,7 @@ namespace Rechnermodul.Informationstechnik.Utils
         {
             if (bytes <= 0) { return 0; }
             int power = (int)decimalPrefixDataSize + 1;
-            return bytes / (decimal)Math.Pow(1000, power);
+            return bytes / (decimal)Math4U.Pow(1000, power);
         }
     }
 }
