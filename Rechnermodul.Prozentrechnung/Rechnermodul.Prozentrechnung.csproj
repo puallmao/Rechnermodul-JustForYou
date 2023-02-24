@@ -51,11 +51,32 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\Utils\PercentageCalculation1.cs" />
+    <Compile Include="src\Utils\PercentageCalculation2.cs" />
+    <Compile Include="src\Utils\PriceCalculation.cs" />
     <Compile Include="src\View\FRM_Prozentrechnung.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="src\View\FRM_Prozentrechnung.Designer.cs">
       <DependentUpon>FRM_Prozentrechnung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\View\UC_PercentageCalculation1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="src\View\UC_PercentageCalculation1.Designer.cs">
+      <DependentUpon>UC_PercentageCalculation1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\View\UC_PercentageCalculation2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="src\View\UC_PercentageCalculation2.Designer.cs">
+      <DependentUpon>UC_PercentageCalculation2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\View\UC_PriceCalculation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="src\View\UC_PriceCalculation.Designer.cs">
+      <DependentUpon>UC_PriceCalculation.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -66,6 +87,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="src\View\FRM_Prozentrechnung.resx">
+      <DependentUpon>FRM_Prozentrechnung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\View\UC_PercentageCalculation1.resx">
+      <DependentUpon>UC_PercentageCalculation1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\View\UC_PercentageCalculation2.resx">
+      <DependentUpon>UC_PercentageCalculation2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\View\UC_PriceCalculation.resx">
+      <DependentUpon>UC_PriceCalculation.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -79,6 +112,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Rechnermodul.Utils\Rechnermodul.Utils.csproj">
+      <Project>{85D8E49D-0B77-4F2B-B1F7-85CDBD8BD05D}</Project>
+      <Name>Rechnermodul.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

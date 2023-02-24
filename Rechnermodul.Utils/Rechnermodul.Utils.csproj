@@ -45,6 +45,7 @@
     <Compile Include="src\Shared\Encryption.cs" />
     <Compile Include="src\Shared\FontSerializable.cs" />
     <Compile Include="src\Shared\History.cs" />
+    <Compile Include="src\Shared\Math4U.cs" />
     <Compile Include="src\Shared\JsonColorConverter.cs" />
     <Compile Include="src\Shared\Settings.cs" />
     <Compile Include="src\Shared\ThemeManager.cs" />
