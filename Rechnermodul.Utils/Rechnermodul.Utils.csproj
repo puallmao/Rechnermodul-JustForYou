@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="src\Controller\ModelController.cs" />
     <Compile Include="src\Shared\History.cs" />
+    <Compile Include="src\Shared\Math4U.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Windows.Forms" />
