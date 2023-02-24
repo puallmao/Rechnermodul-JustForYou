@@ -8,6 +8,7 @@ using Rechnermodul.MathematischeFunktionen.View;
 using Rechnermodul.Prozentrechnung.View;
 using Rechnermodul.Schule.View;
 using Rechnermodul.Utils.Controller;
+using Rechnermodul.Utils.Shared.View;
 using System;
 using System.Windows.Forms;
 
@@ -43,6 +44,7 @@ namespace Rechnermodul.Main
             ModuleController.registerModule(new FRM_MathematischeFunktionen());
             ModuleController.registerModule(new FRM_Schule());
             ModuleController.registerModule(new FRM_Informationstechnik());
+            ModuleController.registerModule(new FRM_Settings());
         }
     }
 }
