@@ -29,59 +29,110 @@ namespace Rechnermodul.Grundrechner.View
         /// </summary>
         private void InitializeComponent()
         {
-            this.grundrechner_txtbox = new System.Windows.Forms.TextBox();
-            this.copy_btn = new System.Windows.Forms.Button();
-            this.enter_btn = new System.Windows.Forms.Button();
+            this.BTN_enter = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.TB_input = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.TB_result = new System.Windows.Forms.TextBox();
+            this.BTN_copy = new System.Windows.Forms.Button();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // grundrechner_txtbox
+            // BTN_enter
             // 
-            this.grundrechner_txtbox.Location = new System.Drawing.Point(12, 45);
-            this.grundrechner_txtbox.Multiline = true;
-            this.grundrechner_txtbox.Name = "grundrechner_txtbox";
-            this.grundrechner_txtbox.Size = new System.Drawing.Size(332, 150);
-            this.grundrechner_txtbox.TabIndex = 0;
+            this.BTN_enter.Location = new System.Drawing.Point(344, 26);
+            this.BTN_enter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BTN_enter.Name = "BTN_enter";
+            this.BTN_enter.Size = new System.Drawing.Size(144, 71);
+            this.BTN_enter.TabIndex = 5;
+            this.BTN_enter.Text = "Enter";
+            this.BTN_enter.UseVisualStyleBackColor = true;
+            this.BTN_enter.Click += new System.EventHandler(this.BTN_enter_Click);
             // 
-            // copy_btn
+            // groupBox1
             // 
-            this.copy_btn.Location = new System.Drawing.Point(350, 45);
-            this.copy_btn.Name = "copy_btn";
-            this.copy_btn.Size = new System.Drawing.Size(96, 72);
-            this.copy_btn.TabIndex = 1;
-            this.copy_btn.Text = "Copy";
-            this.copy_btn.UseVisualStyleBackColor = true;
+            this.groupBox1.Controls.Add(this.TB_input);
+            this.groupBox1.Location = new System.Drawing.Point(18, 18);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Size = new System.Drawing.Size(316, 78);
+            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Eingabe";
             // 
-            // enter_btn
+            // TB_input
             // 
-            this.enter_btn.Location = new System.Drawing.Point(350, 123);
-            this.enter_btn.Name = "enter_btn";
-            this.enter_btn.Size = new System.Drawing.Size(96, 72);
-            this.enter_btn.TabIndex = 2;
-            this.enter_btn.Text = "Enter";
-            this.enter_btn.UseVisualStyleBackColor = true;
-            this.enter_btn.Click += new System.EventHandler(this.enter_btn_Click);
+            this.TB_input.Location = new System.Drawing.Point(9, 29);
+            this.TB_input.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TB_input.Name = "TB_input";
+            this.TB_input.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.TB_input.Size = new System.Drawing.Size(296, 26);
+            this.TB_input.TabIndex = 0;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.TB_result);
+            this.groupBox2.Location = new System.Drawing.Point(18, 106);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Size = new System.Drawing.Size(316, 78);
+            this.groupBox2.TabIndex = 7;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Eingabe";
+            // 
+            // TB_result
+            // 
+            this.TB_result.Location = new System.Drawing.Point(9, 29);
+            this.TB_result.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TB_result.Name = "TB_result";
+            this.TB_result.ReadOnly = true;
+            this.TB_result.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.TB_result.Size = new System.Drawing.Size(296, 26);
+            this.TB_result.TabIndex = 0;
+            // 
+            // BTN_copy
+            // 
+            this.BTN_copy.Location = new System.Drawing.Point(344, 114);
+            this.BTN_copy.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BTN_copy.Name = "BTN_copy";
+            this.BTN_copy.Size = new System.Drawing.Size(144, 71);
+            this.BTN_copy.TabIndex = 8;
+            this.BTN_copy.Text = "Kopieren";
+            this.BTN_copy.UseVisualStyleBackColor = true;
+            this.BTN_copy.Click += new System.EventHandler(this.BTN_copy_Click);
             // 
             // FRM_Grundrechner
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(459, 206);
-            this.Controls.Add(this.enter_btn);
-            this.Controls.Add(this.copy_btn);
-            this.Controls.Add(this.grundrechner_txtbox);
+            this.ClientSize = new System.Drawing.Size(504, 197);
+            this.Controls.Add(this.BTN_copy);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.BTN_enter);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FRM_Grundrechner";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Grundrechner";
-            this.Load += new System.EventHandler(this.FRM_Grundrechner_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox grundrechner_txtbox;
-        private System.Windows.Forms.Button copy_btn;
-        private System.Windows.Forms.Button enter_btn;
+        private System.Windows.Forms.Button BTN_enter;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox TB_input;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox TB_result;
+        private System.Windows.Forms.Button BTN_copy;
     }
 }
