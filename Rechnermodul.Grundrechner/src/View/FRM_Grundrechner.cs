@@ -1,4 +1,4 @@
-﻿using Rechnermodul.Grundrechner.Utils;
+using Rechnermodul.Grundrechner.Utils;
 using System;
 using System.Linq;
 using System.Windows.Forms;
