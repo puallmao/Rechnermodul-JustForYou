@@ -35,13 +35,16 @@ namespace Rechnermodul.Grundrechner.View
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.TB_result = new System.Windows.Forms.TextBox();
             this.BTN_copy = new System.Windows.Forms.Button();
+            this.MS_default = new System.Windows.Forms.MenuStrip();
+            this.TSMI_settings = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.MS_default.SuspendLayout();
             this.SuspendLayout();
             // 
             // BTN_enter
             // 
-            this.BTN_enter.Location = new System.Drawing.Point(344, 26);
+            this.BTN_enter.Location = new System.Drawing.Point(344, 50);
             this.BTN_enter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BTN_enter.Name = "BTN_enter";
             this.BTN_enter.Size = new System.Drawing.Size(144, 71);
@@ -53,7 +56,7 @@ namespace Rechnermodul.Grundrechner.View
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.TB_input);
-            this.groupBox1.Location = new System.Drawing.Point(18, 18);
+            this.groupBox1.Location = new System.Drawing.Point(18, 42);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -74,7 +77,7 @@ namespace Rechnermodul.Grundrechner.View
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.TB_result);
-            this.groupBox2.Location = new System.Drawing.Point(18, 106);
+            this.groupBox2.Location = new System.Drawing.Point(18, 130);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -95,7 +98,7 @@ namespace Rechnermodul.Grundrechner.View
             // 
             // BTN_copy
             // 
-            this.BTN_copy.Location = new System.Drawing.Point(344, 114);
+            this.BTN_copy.Location = new System.Drawing.Point(344, 138);
             this.BTN_copy.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BTN_copy.Name = "BTN_copy";
             this.BTN_copy.Size = new System.Drawing.Size(144, 71);
@@ -104,11 +107,30 @@ namespace Rechnermodul.Grundrechner.View
             this.BTN_copy.UseVisualStyleBackColor = true;
             this.BTN_copy.Click += new System.EventHandler(this.BTN_copy_Click);
             // 
+            // MS_default
+            // 
+            this.MS_default.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.MS_default.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.MS_default.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TSMI_settings});
+            this.MS_default.Location = new System.Drawing.Point(0, 0);
+            this.MS_default.Name = "MS_default";
+            this.MS_default.Size = new System.Drawing.Size(504, 33);
+            this.MS_default.TabIndex = 9;
+            // 
+            // TSMI_settings
+            // 
+            this.TSMI_settings.Name = "TSMI_settings";
+            this.TSMI_settings.Size = new System.Drawing.Size(132, 29);
+            this.TSMI_settings.Text = "Einstellungen";
+            this.TSMI_settings.Click += new System.EventHandler(this.TSMI_settings_Click);
+            // 
             // FRM_Grundrechner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(504, 197);
+            this.ClientSize = new System.Drawing.Size(504, 220);
+            this.Controls.Add(this.MS_default);
             this.Controls.Add(this.BTN_copy);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -124,7 +146,10 @@ namespace Rechnermodul.Grundrechner.View
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.MS_default.ResumeLayout(false);
+            this.MS_default.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -136,5 +161,7 @@ namespace Rechnermodul.Grundrechner.View
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox TB_result;
         private System.Windows.Forms.Button BTN_copy;
+        private System.Windows.Forms.MenuStrip MS_default;
+        private System.Windows.Forms.ToolStripMenuItem TSMI_settings;
     }
 }

@@ -1,5 +1,6 @@
 using Rechnermodul.Grundrechner.Utils;
 using Rechnermodul.Utils.Shared;
+using Rechnermodul.Utils.Shared.View;
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -78,6 +79,12 @@ namespace Rechnermodul.Grundrechner.View
         private void BTN_copy_Click(object sender, EventArgs e)
         {
             Clipboard.SetText(TB_result.Text);           
+        }
+
+        private void TSMI_settings_Click(object sender, EventArgs e)
+        {
+            FRM_Settings FRM_Settings = new FRM_Settings();
+            FRM_Settings.ShowDialog();
         }
     }
 }

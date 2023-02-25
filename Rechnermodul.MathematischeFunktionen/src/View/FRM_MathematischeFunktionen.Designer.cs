@@ -36,14 +36,17 @@ namespace Rechnermodul.MathematischeFunktionen.View
             this.BTN_sqrt = new System.Windows.Forms.Button();
             this.BTN_power = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.LBL_noFunctionSelected = new System.Windows.Forms.Label();
+            this.MS_default = new System.Windows.Forms.MenuStrip();
+            this.TSMI_settings = new System.Windows.Forms.ToolStripMenuItem();
             this.UC_CalculateDecimalFraction = new Rechnermodul.MathematischeFunktionen.View.UC_CalculateDecimalFraction();
             this.UC_CalculatePrimeNumbers = new Rechnermodul.MathematischeFunktionen.View.UC_CalculatePrimeNumbers();
             this.UC_CalculatePower = new Rechnermodul.MathematischeFunktionen.View.UC_CalculatePower();
             this.UC_CalculateSqrt = new Rechnermodul.MathematischeFunktionen.View.UC_CalculateSqrt();
             this.UC_CalculateFactorial = new Rechnermodul.MathematischeFunktionen.View.UC_CalculateFactorial();
-            this.LBL_noFunctionSelected = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.MS_default.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -53,7 +56,7 @@ namespace Rechnermodul.MathematischeFunktionen.View
             this.groupBox1.Controls.Add(this.BTN_primeNumber);
             this.groupBox1.Controls.Add(this.BTN_sqrt);
             this.groupBox1.Controls.Add(this.BTN_power);
-            this.groupBox1.Location = new System.Drawing.Point(18, 18);
+            this.groupBox1.Location = new System.Drawing.Point(18, 41);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -120,7 +123,7 @@ namespace Rechnermodul.MathematischeFunktionen.View
             this.groupBox2.Controls.Add(this.UC_CalculateSqrt);
             this.groupBox2.Controls.Add(this.UC_CalculateFactorial);
             this.groupBox2.Controls.Add(this.LBL_noFunctionSelected);
-            this.groupBox2.Location = new System.Drawing.Point(18, 118);
+            this.groupBox2.Location = new System.Drawing.Point(18, 141);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -128,6 +131,35 @@ namespace Rechnermodul.MathematischeFunktionen.View
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Funktion";
+            // 
+            // LBL_noFunctionSelected
+            // 
+            this.LBL_noFunctionSelected.AutoSize = true;
+            this.LBL_noFunctionSelected.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_noFunctionSelected.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.LBL_noFunctionSelected.Location = new System.Drawing.Point(114, 177);
+            this.LBL_noFunctionSelected.Name = "LBL_noFunctionSelected";
+            this.LBL_noFunctionSelected.Size = new System.Drawing.Size(213, 20);
+            this.LBL_noFunctionSelected.TabIndex = 9;
+            this.LBL_noFunctionSelected.Text = "Noch keine Funktion gewählt";
+            // 
+            // MS_default
+            // 
+            this.MS_default.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.MS_default.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.MS_default.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TSMI_settings});
+            this.MS_default.Location = new System.Drawing.Point(0, 0);
+            this.MS_default.Name = "MS_default";
+            this.MS_default.Size = new System.Drawing.Size(482, 33);
+            this.MS_default.TabIndex = 7;
+            // 
+            // TSMI_settings
+            // 
+            this.TSMI_settings.Name = "TSMI_settings";
+            this.TSMI_settings.Size = new System.Drawing.Size(132, 29);
+            this.TSMI_settings.Text = "Einstellungen";
+            this.TSMI_settings.Click += new System.EventHandler(this.TSMI_settings_Click);
             // 
             // UC_CalculateDecimalFraction
             // 
@@ -174,22 +206,12 @@ namespace Rechnermodul.MathematischeFunktionen.View
             this.UC_CalculateFactorial.TabIndex = 4;
             this.UC_CalculateFactorial.Visible = false;
             // 
-            // LBL_noFunctionSelected
-            // 
-            this.LBL_noFunctionSelected.AutoSize = true;
-            this.LBL_noFunctionSelected.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBL_noFunctionSelected.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.LBL_noFunctionSelected.Location = new System.Drawing.Point(114, 177);
-            this.LBL_noFunctionSelected.Name = "LBL_noFunctionSelected";
-            this.LBL_noFunctionSelected.Size = new System.Drawing.Size(213, 20);
-            this.LBL_noFunctionSelected.TabIndex = 9;
-            this.LBL_noFunctionSelected.Text = "Noch keine Funktion gewählt";
-            // 
             // FRM_MathematischeFunktionen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 508);
+            this.ClientSize = new System.Drawing.Size(482, 526);
+            this.Controls.Add(this.MS_default);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -202,7 +224,10 @@ namespace Rechnermodul.MathematischeFunktionen.View
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.MS_default.ResumeLayout(false);
+            this.MS_default.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -221,5 +246,7 @@ namespace Rechnermodul.MathematischeFunktionen.View
         private UC_CalculateSqrt UC_CalculateSqrt;
         private UC_CalculateFactorial UC_CalculateFactorial;
         private System.Windows.Forms.Label LBL_noFunctionSelected;
+        private System.Windows.Forms.MenuStrip MS_default;
+        private System.Windows.Forms.ToolStripMenuItem TSMI_settings;
     }
 }

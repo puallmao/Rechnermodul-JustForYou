@@ -54,8 +54,11 @@ namespace Rechnermodul.Eingabemodul.View
             this.BTN_input9 = new System.Windows.Forms.Button();
             this.BTN_input8 = new System.Windows.Forms.Button();
             this.BTN_input7 = new System.Windows.Forms.Button();
+            this.MS_default = new System.Windows.Forms.MenuStrip();
+            this.TSMI_settings = new System.Windows.Forms.ToolStripMenuItem();
             this.GB_input.SuspendLayout();
             this.GB_inputs.SuspendLayout();
+            this.MS_default.SuspendLayout();
             this.SuspendLayout();
             // 
             // TB_input
@@ -70,7 +73,7 @@ namespace Rechnermodul.Eingabemodul.View
             // GB_input
             // 
             this.GB_input.Controls.Add(this.TB_input);
-            this.GB_input.Location = new System.Drawing.Point(12, 12);
+            this.GB_input.Location = new System.Drawing.Point(12, 41);
             this.GB_input.Name = "GB_input";
             this.GB_input.Size = new System.Drawing.Size(351, 83);
             this.GB_input.TabIndex = 1;
@@ -101,7 +104,7 @@ namespace Rechnermodul.Eingabemodul.View
             this.GB_inputs.Controls.Add(this.BTN_input9);
             this.GB_inputs.Controls.Add(this.BTN_input8);
             this.GB_inputs.Controls.Add(this.BTN_input7);
-            this.GB_inputs.Location = new System.Drawing.Point(12, 101);
+            this.GB_inputs.Location = new System.Drawing.Point(12, 130);
             this.GB_inputs.Name = "GB_inputs";
             this.GB_inputs.Size = new System.Drawing.Size(351, 343);
             this.GB_inputs.TabIndex = 2;
@@ -328,11 +331,30 @@ namespace Rechnermodul.Eingabemodul.View
             this.BTN_input7.UseVisualStyleBackColor = true;
             this.BTN_input7.Click += new System.EventHandler(this.BTN_input7_Click);
             // 
+            // MS_default
+            // 
+            this.MS_default.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.MS_default.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.MS_default.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TSMI_settings});
+            this.MS_default.Location = new System.Drawing.Point(0, 0);
+            this.MS_default.Name = "MS_default";
+            this.MS_default.Size = new System.Drawing.Size(373, 33);
+            this.MS_default.TabIndex = 6;
+            // 
+            // TSMI_settings
+            // 
+            this.TSMI_settings.Name = "TSMI_settings";
+            this.TSMI_settings.Size = new System.Drawing.Size(132, 29);
+            this.TSMI_settings.Text = "Einstellungen";
+            this.TSMI_settings.Click += new System.EventHandler(this.TSMI_settings_Click);
+            // 
             // FRM_Eingabemodul
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(373, 453);
+            this.ClientSize = new System.Drawing.Size(373, 481);
+            this.Controls.Add(this.MS_default);
             this.Controls.Add(this.GB_inputs);
             this.Controls.Add(this.GB_input);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -341,7 +363,10 @@ namespace Rechnermodul.Eingabemodul.View
             this.GB_input.ResumeLayout(false);
             this.GB_input.PerformLayout();
             this.GB_inputs.ResumeLayout(false);
+            this.MS_default.ResumeLayout(false);
+            this.MS_default.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -372,5 +397,7 @@ namespace Rechnermodul.Eingabemodul.View
         private System.Windows.Forms.Button BTN_inputClosingBracket;
         private System.Windows.Forms.Button BTN_inputOpeningBracket;
         private System.Windows.Forms.Button BTN_inputNR;
+        private System.Windows.Forms.MenuStrip MS_default;
+        private System.Windows.Forms.ToolStripMenuItem TSMI_settings;
     }
 }

@@ -38,8 +38,11 @@ namespace Rechnermodul.Prozentrechnung.View
             this.UC_PriceCalculation = new Rechnermodul.Prozentrechnung.View.UC_PriceCalculation();
             this.UC_PercentageCalculation2 = new Rechnermodul.Prozentrechnung.View.UC_PercentageCalculation2();
             this.UC_PercentageCalculation1 = new Rechnermodul.Prozentrechnung.View.UC_PercentageCalculation1();
+            this.MS_default = new System.Windows.Forms.MenuStrip();
+            this.TSMI_settings = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.MS_default.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -47,7 +50,7 @@ namespace Rechnermodul.Prozentrechnung.View
             this.groupBox1.Controls.Add(this.BTN_priceCalculation);
             this.groupBox1.Controls.Add(this.BTN_percentageCalculation1);
             this.groupBox1.Controls.Add(this.BTN_percentageCalculation2);
-            this.groupBox1.Location = new System.Drawing.Point(13, 14);
+            this.groupBox1.Location = new System.Drawing.Point(13, 43);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -92,7 +95,7 @@ namespace Rechnermodul.Prozentrechnung.View
             this.groupBox2.Controls.Add(this.UC_PriceCalculation);
             this.groupBox2.Controls.Add(this.UC_PercentageCalculation2);
             this.groupBox2.Controls.Add(this.UC_PercentageCalculation1);
-            this.groupBox2.Location = new System.Drawing.Point(13, 173);
+            this.groupBox2.Location = new System.Drawing.Point(13, 202);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -138,11 +141,30 @@ namespace Rechnermodul.Prozentrechnung.View
             this.UC_PercentageCalculation1.TabIndex = 3;
             this.UC_PercentageCalculation1.Visible = false;
             // 
+            // MS_default
+            // 
+            this.MS_default.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.MS_default.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.MS_default.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TSMI_settings});
+            this.MS_default.Location = new System.Drawing.Point(0, 0);
+            this.MS_default.Name = "MS_default";
+            this.MS_default.Size = new System.Drawing.Size(362, 33);
+            this.MS_default.TabIndex = 6;
+            // 
+            // TSMI_settings
+            // 
+            this.TSMI_settings.Name = "TSMI_settings";
+            this.TSMI_settings.Size = new System.Drawing.Size(132, 29);
+            this.TSMI_settings.Text = "Einstellungen";
+            this.TSMI_settings.Click += new System.EventHandler(this.TSMI_settings_Click);
+            // 
             // FRM_Prozentrechnung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(362, 632);
+            this.ClientSize = new System.Drawing.Size(362, 662);
+            this.Controls.Add(this.MS_default);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -154,7 +176,10 @@ namespace Rechnermodul.Prozentrechnung.View
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.MS_default.ResumeLayout(false);
+            this.MS_default.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -169,5 +194,7 @@ namespace Rechnermodul.Prozentrechnung.View
         private UC_PercentageCalculation1 UC_PercentageCalculation1;
         private UC_PriceCalculation UC_PriceCalculation;
         private System.Windows.Forms.Label LBL_noFunctionSelected;
+        private System.Windows.Forms.MenuStrip MS_default;
+        private System.Windows.Forms.ToolStripMenuItem TSMI_settings;
     }
 }

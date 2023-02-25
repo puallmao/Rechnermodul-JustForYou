@@ -1,4 +1,5 @@
 ﻿using Rechnermodul.Utils.Shared;
+using Rechnermodul.Utils.Shared.View;
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -245,6 +246,12 @@ namespace Rechnermodul.Eingabemodul.View
         {
             Form FRM_Grundrechner = GrundrechnerConnector.Grundrechner.GetForm();
             FRM_Grundrechner.ShowDialog();
+        }
+
+        private void TSMI_settings_Click(object sender, EventArgs e)
+        {
+            FRM_Settings FRM_Settings = new FRM_Settings();
+            FRM_Settings.ShowDialog();
         }
     }
 }
