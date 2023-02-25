@@ -26,7 +26,7 @@ namespace Rechnermodul.Prozentrechnung.View
             if (blockValueChangedEvents) return;
 
             blockValueChangedEvents = true;
-            NUM_bruttoValue.Value = PriceCalculation.AddSalesTax(NUM_nettoValue.Value);
+            NUM_bruttoValue.Value = Math4U.Round(PriceCalculation.AddSalesTax(NUM_nettoValue.Value), 6);
             History.AddEntry($"Nettopreis {NUM_nettoValue.Value} zu Bruttopreis {NUM_bruttoValue.Value}");
             blockValueChangedEvents = false;
         }
@@ -36,7 +36,7 @@ namespace Rechnermodul.Prozentrechnung.View
             if (blockValueChangedEvents) return;
 
             blockValueChangedEvents = true;
-            NUM_nettoValue.Value = PriceCalculation.RemoveSalesTax(NUM_bruttoValue.Value);
+            NUM_nettoValue.Value = Math4U.Round(PriceCalculation.RemoveSalesTax(NUM_bruttoValue.Value), 6);
             History.AddEntry($"Bruttopreis {NUM_bruttoValue.Value} zu Nettopreis {NUM_nettoValue.Value}");
             blockValueChangedEvents = false;
         }

@@ -192,10 +192,13 @@ namespace Rechnermodul.MathematischeFunktionen.View
             this.ClientSize = new System.Drawing.Size(482, 508);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FRM_MathematischeFunktionen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mathematische Funktionen";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FRM_MathematischeFunktionen_FormClosing);
+            this.Load += new System.EventHandler(this.FRM_MathematischeFunktionen_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

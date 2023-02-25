@@ -130,6 +130,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Rechnermodul.Eingabemodul\Rechnermodul.Eingabemodul.csproj">
+      <Project>{082d17b2-d8eb-4666-99c3-6907860c8b66}</Project>
+      <Name>Rechnermodul.Eingabemodul</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Rechnermodul.Utils\Rechnermodul.Utils.csproj">
       <Project>{85d8e49d-0b77-4f2b-b1f7-85cdbd8bd05d}</Project>
       <Name>Rechnermodul.Utils</Name>

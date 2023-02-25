@@ -51,23 +51,23 @@ namespace Rechnermodul.Informationstechnik.View
 
             if (bytes < 1000000)
             {
-                decSize = DataSizeConversion.convertToDecimalPrefix(DataSizeConversion.decimalPrefixDataSizes.KiloByte, bytes).ToString() + " KB";
-                binSize = DataSizeConversion.convertToBinaryPrefix(DataSizeConversion.binaryPrefixDataSizes.KibiByte, bytes).ToString() + " KiB";
+                decSize = Math4U.Round(DataSizeConversion.convertToDecimalPrefix(DataSizeConversion.decimalPrefixDataSizes.KiloByte, bytes), 6).ToString() + " KB";
+                binSize = Math4U.Round(DataSizeConversion.convertToBinaryPrefix(DataSizeConversion.binaryPrefixDataSizes.KibiByte, bytes), 6).ToString() + " KiB";
             }
             else if (bytes >= 1000000 && bytes < 1000000000)
             {
-                decSize = DataSizeConversion.convertToDecimalPrefix(DataSizeConversion.decimalPrefixDataSizes.MegaByte, bytes).ToString() + " MB";
-                binSize = DataSizeConversion.convertToBinaryPrefix(DataSizeConversion.binaryPrefixDataSizes.MebiByte, bytes).ToString() + " MiB";
+                decSize = Math4U.Round(DataSizeConversion.convertToDecimalPrefix(DataSizeConversion.decimalPrefixDataSizes.MegaByte, bytes), 6).ToString() + " MB";
+                binSize = Math4U.Round(DataSizeConversion.convertToBinaryPrefix(DataSizeConversion.binaryPrefixDataSizes.MebiByte, bytes), 6).ToString() + " MiB";
             }
             else if (bytes >= 1000000000 && bytes < 1000000000000)
             {
-                decSize = DataSizeConversion.convertToDecimalPrefix(DataSizeConversion.decimalPrefixDataSizes.GigaByte, bytes).ToString() + " GB";
-                binSize = DataSizeConversion.convertToBinaryPrefix(DataSizeConversion.binaryPrefixDataSizes.GibiByte, bytes).ToString() + " GiB";
+                decSize = Math4U.Round(DataSizeConversion.convertToDecimalPrefix(DataSizeConversion.decimalPrefixDataSizes.GigaByte, bytes), 6).ToString() + " GB";
+                binSize = Math4U.Round(DataSizeConversion.convertToBinaryPrefix(DataSizeConversion.binaryPrefixDataSizes.GibiByte, bytes), 6).ToString() + " GiB";
             }
             else if (bytes >= 1000000000000)
             {
-                decSize = DataSizeConversion.convertToDecimalPrefix(DataSizeConversion.decimalPrefixDataSizes.TeraByte, bytes).ToString() + " TB";
-                binSize = DataSizeConversion.convertToBinaryPrefix(DataSizeConversion.binaryPrefixDataSizes.TebiByte, bytes).ToString() + " TiB";
+                decSize = Math4U.Round(DataSizeConversion.convertToDecimalPrefix(DataSizeConversion.decimalPrefixDataSizes.TeraByte, bytes), 6).ToString() + " TB";
+                binSize = Math4U.Round(DataSizeConversion.convertToBinaryPrefix(DataSizeConversion.binaryPrefixDataSizes.TebiByte, bytes), 6).ToString() + " TiB";
             }
 
             TB_size.Text = $"{decSize} | {binSize}";
@@ -76,7 +76,7 @@ namespace Rechnermodul.Informationstechnik.View
                     History.AddEntry($"Dateigröße berechnet: {decSize} | {binSize} (Farbtiefe: {NUM_colorDepth.Value}, Höhe: {NUM_imageHeight.Value}, Breite: {NUM_imageWidth.Value})");
                 else
                     if (NUM_framesPerSecond.Value != 0 && NUM_videoLength.Value != 0)
-                    History.AddEntry($"Videogröße berechnet: {decSize} | {binSize} (Farbtiefe: {NUM_colorDepth.Value}, Höhe: {NUM_imageHeight.Value}, Breite: {NUM_imageWidth.Value}, FPS: {NUM_framesPerSecond.Value}, Videolänge: {NUM_videoLength.Value})");
+                        History.AddEntry($"Videogröße berechnet: {decSize} | {binSize} (Farbtiefe: {NUM_colorDepth.Value}, Höhe: {NUM_imageHeight.Value}, Breite: {NUM_imageWidth.Value}, FPS: {NUM_framesPerSecond.Value}, Videolänge: {NUM_videoLength.Value})");
         }
     }
 }

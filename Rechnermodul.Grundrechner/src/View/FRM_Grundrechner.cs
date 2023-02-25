@@ -1,31 +1,61 @@
 using Rechnermodul.Grundrechner.Utils;
+using Rechnermodul.Utils.Shared;
 using System;
 using System.Linq;
 using System.Windows.Forms;
 
 namespace Rechnermodul.Grundrechner.View
 {
-    public partial class FRM_Grundrechner : Form
+    public partial class FRM_Grundrechner : Form, IGrundrechner
     {
+        private Eingabemodul.View.FRM_Eingabemodul eingabemodul;
+
         public FRM_Grundrechner()
         {
             InitializeComponent();
+            SettingsManager.SettingsChanged += SettingsChanged;
+            SettingsManager.ApplySettingsToForm(this);
         }
 
-        public event EventHandler<string> CopyEvent;
+        public Form GetForm() { return new FRM_Grundrechner(); }
+
+        private void SettingsChanged(object sender, EventArgs e)
+        {
+            SettingsManager.ApplySettingsToForm(this);
+        }
+
+        private void FRM_Grundrechner_Load(object sender, EventArgs e)
+        {
+            eingabemodul = new Eingabemodul.View.FRM_Eingabemodul();
+            eingabemodul.EnterEvent += EnterEvent;
+            eingabemodul.Show();
+        }
+
+        private void FRM_Grundrechner_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            eingabemodul.Close();
+        }
+
+        private void EnterEvent(object sender, string data)
+        {
+            TB_input.Text = data;
+        }
+
 
         private void BTN_enter_Click(object sender, EventArgs e)
         {
-            string equation = TB_input.Text;
-            if (string.IsNullOrEmpty(equation)) { MessageBox.Show("Syntax-Error", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            string result = TB_input.Text;
+            string stringEquation = result;
+
+            if (string.IsNullOrEmpty(result)) { MessageBox.Show("Syntax-Error", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error); }
             else
             {
-                equation = equation.Replace(" ", "");
-                int openParenthesisCount = equation.Count(x => x == '(');
-                int closedParenthesisCount = equation.Count(x => x == '(');
+                result = result.Replace(" ", "");
+                int openParenthesisCount = result.Count(x => x == '(');
+                int closedParenthesisCount = result.Count(x => x == '(');
 
                 // Check if equation contains '(' or ')'
-                if (equation.Contains("(") || equation.Contains(")"))
+                if (result.Contains("(") || result.Contains(")"))
                 {
                     // Check if the total amount of opening and closing parenthesis are the same
                     if (openParenthesisCount == closedParenthesisCount)
@@ -33,20 +63,21 @@ namespace Rechnermodul.Grundrechner.View
                         for (int i = 0; i <= openParenthesisCount; i++)
                         {
                             // Process parenthesis
-                            equation = BasicCalculation.ProcessParenthesis(equation);
+                            result = BasicCalculation.ProcessParenthesis(result);
                         }
                     }
                     else { MessageBox.Show("Syntax-Error", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error); }
                 }
-                else { equation = BasicCalculation.ProcessStringEquation(BasicCalculation.SplitInput(equation)); }
-                TB_result.Text = equation;
+                else { result = BasicCalculation.ProcessStringEquation(BasicCalculation.SplitInput(result)); }
+
+                TB_result.Text = Math4U.Round(decimal.Parse(result), 6).ToString();
+                History.AddEntry($"{stringEquation} = {result}");
             }
         }
 
         private void BTN_copy_Click(object sender, EventArgs e)
         {
-            if (CopyEvent == null) { Clipboard.SetText(TB_result.Text); }
-            else { try { CopyEvent(this, TB_result.Text); } catch { } }
+            Clipboard.SetText(TB_result.Text);           
         }
     }
 }

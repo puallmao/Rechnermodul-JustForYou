@@ -9,7 +9,7 @@ namespace Rechnermodul.Eingabemodul.View
     {
         private char[] signs = { '+', '-', '/', '*' };
         private char[] numbers = { '1', '2', '3', '4', '5', '6', '7', '8', '9' };
-
+        
         public FRM_Eingabemodul()
         {
             InitializeComponent();
@@ -240,10 +240,11 @@ namespace Rechnermodul.Eingabemodul.View
             EnterEvent(this, this.TB_input.Text);
             TB_input.Text = String.Empty;
         }
-
+        
         private void BTN_inputNR_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            Form FRM_Grundrechner = GrundrechnerConnector.Grundrechner.GetForm();
+            FRM_Grundrechner.ShowDialog();
         }
     }
 }

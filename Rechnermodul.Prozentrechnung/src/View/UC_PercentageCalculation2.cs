@@ -25,7 +25,7 @@ namespace Rechnermodul.Prozentrechnung.View
 
             result = PercentageCalculation2.CalculatePercentage(value, percentageValue);
             History.AddEntry($"{percentageValue} vom Grundwert {value} = {result}%");
-            TB_result.Text = result.ToString();
+            TB_result.Text = Math4U.Round(result, 6).ToString();
         }
     }
 }

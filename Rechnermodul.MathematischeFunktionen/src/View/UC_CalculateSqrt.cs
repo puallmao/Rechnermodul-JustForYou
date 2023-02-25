@@ -1,4 +1,5 @@
 ﻿using Rechnermodul.MathematischeFunktionen.Utils;
+using Rechnermodul.Utils.Shared;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,7 +21,7 @@ namespace Rechnermodul.MathematischeFunktionen.View
 
         private void NUM_value_ValueChanged(object sender, EventArgs e)
         {
-            TB_result.Text = Calculation.Sqrt(NUM_value.Value).ToString();
+            TB_result.Text = Math4U.Round(Calculation.Sqrt(NUM_value.Value), 6).ToString();
         }
     }
 }

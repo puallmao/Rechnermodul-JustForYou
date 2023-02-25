@@ -14,6 +14,7 @@ namespace Rechnermodul.Main.View
             SettingsManager.SettingsChanged += SettingsChanged;
             SettingsManager.ApplySettingsToForm(this);
             History.NewEntryEvent += NewEntryEvent;
+            GrundrechnerConnector.Grundrechner = new Grundrechner.View.FRM_Grundrechner();
         }
 
         private void SettingsChanged(object sender, EventArgs e)

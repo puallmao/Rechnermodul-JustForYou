@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rechnermodul.Utils.Shared;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,7 +21,7 @@ namespace Rechnermodul.MathematischeFunktionen.View
         private void setValue(object sender, EventArgs e)
         {
             if (NUM_denominator.Value == 0) { TB_result.Text = "0"; return; }
-            TB_result.Text = (NUM_numerator.Value / NUM_denominator.Value).ToString();
+            TB_result.Text = Math4U.Round((NUM_numerator.Value / NUM_denominator.Value), 6).ToString();
         }
     }
 }
