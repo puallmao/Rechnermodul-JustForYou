@@ -8,6 +8,7 @@ using Rechnermodul.MathematischeFunktionen.View;
 using Rechnermodul.Prozentrechnung.View;
 using Rechnermodul.Schule.View;
 using Rechnermodul.Utils.Controller;
+using Rechnermodul.Utils.Shared.View;
 using System;
 using System.Windows.Forms;
 

@@ -1,4 +1,4 @@
-﻿using Rechnermodul.Kreditberechnung.Utils;
+using Rechnermodul.Kreditberechnung.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
