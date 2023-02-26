@@ -17,6 +17,11 @@ namespace Rechnermodul.Informationstechnik.View
             SettingsManager.ApplySettingsToForm(this);
         }
 
+        /// <summary>
+        /// Change Settings
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SettingsChanged(object sender, EventArgs e)
         {
             SettingsManager.ApplySettingsToForm(this);
@@ -25,6 +30,8 @@ namespace Rechnermodul.Informationstechnik.View
         private void FRM_Informationstechnik_Load(object sender, System.EventArgs e)
         {
             UCState = 0;
+
+            // Open Eingabemodul
             eingabemodul = new Eingabemodul.View.FRM_Eingabemodul();
             eingabemodul.EnterEvent += EnterEvent;
             eingabemodul.Show();
@@ -37,9 +44,15 @@ namespace Rechnermodul.Informationstechnik.View
             UC_DataSizeConversion.Visible = false;
             UC_NumberSystemConversion.Visible = false;
 
+            // Close Eingabemodul
             eingabemodul.Close();
         }
 
+        /// <summary>
+        /// Process the Enter Event of the connected Eingabemodul
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="data"></param>
         private void EnterEvent(object sender, string data)
         {
             UserControl userControl = null;
@@ -62,6 +75,7 @@ namespace Rechnermodul.Informationstechnik.View
             if (control is NumericUpDown || control is TextBox)
             {
                 control.Text = data;
+                // Move to the next control
                 if (userControl == UC_FileSizeCalculation)
                 {
                     if (control == UC_FileSizeCalculation.NUM_colorDepth) UC_FileSizeCalculation.NUM_imageWidth.Select();
@@ -104,6 +118,7 @@ namespace Rechnermodul.Informationstechnik.View
 
         private void TSMI_settings_Click(object sender, EventArgs e)
         {
+            // Open settings
             FRM_Settings FRM_Settings = new FRM_Settings();
             FRM_Settings.ShowDialog();
         }

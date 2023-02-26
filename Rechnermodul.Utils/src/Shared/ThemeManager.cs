@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Rechnermodul.Utils.Shared
 {
+    /// <summary>
+    /// Themes the user can choose.
+    /// </summary>
     public class ThemeManager
     {
         public class Theme

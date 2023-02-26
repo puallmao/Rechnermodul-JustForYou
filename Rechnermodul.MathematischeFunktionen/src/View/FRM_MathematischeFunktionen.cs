@@ -17,11 +17,21 @@ namespace Rechnermodul.MathematischeFunktionen.View
             SettingsManager.ApplySettingsToForm(this);
         }
 
+        /// <summary>
+        /// Change settings
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SettingsChanged(object sender, EventArgs e)
         {
             SettingsManager.ApplySettingsToForm(this);
         }
 
+        /// <summary>
+        /// Process the Enter Event of the connected Eingabemodul
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="data"></param>
         private void EnterEvent(object sender, string data)
         {
             UserControl userControl = null;
@@ -50,6 +60,7 @@ namespace Rechnermodul.MathematischeFunktionen.View
             if (control is NumericUpDown || control is TextBox)
             {
                 control.Text = data;
+                // Move to the next control
                 if (userControl == UC_CalculatePower)
                 {
                     if (control == UC_CalculatePower.NUM_base) UC_CalculatePower.NUM_exponent.Select();
@@ -81,6 +92,7 @@ namespace Rechnermodul.MathematischeFunktionen.View
             UC_CalculateDecimalFraction.Visible = false;
             UC_CalculateFactorial.Visible = false;
 
+            // Close eingabemodul
             eingabemodul.Close();
         }
 
@@ -141,6 +153,7 @@ namespace Rechnermodul.MathematischeFunktionen.View
 
         private void TSMI_settings_Click(object sender, EventArgs e)
         {
+            // Open settings
             FRM_Settings FRM_Settings = new FRM_Settings();
             FRM_Settings.ShowDialog();
         }

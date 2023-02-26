@@ -33,6 +33,9 @@ namespace Rechnermodul.Prozentrechnung.View
             }
         }
 
+        /// <summary>
+        /// Calculate and set result
+        /// </summary>
         private void calcResult()
         {
             decimal result;

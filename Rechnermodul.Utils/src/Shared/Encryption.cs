@@ -17,7 +17,11 @@ namespace Rechnermodul.Utils.Shared
         private static readonly byte[] key = { 0x24, 0x75, 0x6F, 0x33, 0x83, 0xBA, 0x37, 0x51, 0x8C, 0x0A, 0xC0, 0x8E, 0x83, 0xA5, 0x0E, 0xCA, 0xE8, 0x52, 0x67, 0x00, 0x3E, 0x98, 0x0A, 0x73, 0xE8, 0xFB, 0x1D, 0xDB, 0xCA, 0x03, 0x9E, 0x6E };
 
 
-        // Encrypt the given data.
+        /// <summary>
+        /// // Encrypt the given data.
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
         public static byte[] Encrypt (byte[] data)
         {
             using (Aes aes = Aes.Create())
@@ -38,7 +42,11 @@ namespace Rechnermodul.Utils.Shared
         }
 
 
-        // Decrypt the given data.
+        /// <summary>
+        /// Decrypt the given data.
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
         public static byte[] Decrypt (byte[] data)
         {
             using (Aes aes = Aes.Create())

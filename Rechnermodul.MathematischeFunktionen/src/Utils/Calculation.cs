@@ -9,6 +9,11 @@ namespace Rechnermodul.MathematischeFunktionen.Utils
 {
     public static class Calculation
     {
+        /// <summary>
+        /// Calculate Factorial
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
         public static BigInteger Factorial(int n)
         {
             bool isNegativ = false;
@@ -18,6 +23,11 @@ namespace Rechnermodul.MathematischeFunktionen.Utils
             return result;
         }
 
+        /// <summary>
+        /// Calculate the Square root
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
         public static decimal Sqrt(decimal n)
         {
             decimal result = n / 2;
@@ -30,6 +40,12 @@ namespace Rechnermodul.MathematischeFunktionen.Utils
             return result;
         }
 
+        /// <summary>
+        /// Calculate the power y of x
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns></returns>
         public static decimal Power(decimal x, decimal y)
         {
             decimal n = x;
@@ -41,6 +57,12 @@ namespace Rechnermodul.MathematischeFunktionen.Utils
             return n;
         }
 
+        /// <summary>
+        /// Calculate all prime number in the given range
+        /// </summary>
+        /// <param name="rangeFrom"></param>
+        /// <param name="rangeTo"></param>
+        /// <returns></returns>
         public static uint[] PrimeNumbers(uint rangeFrom, uint rangeTo)
         {
             List<uint> PrimeNumbers = new List<uint>();

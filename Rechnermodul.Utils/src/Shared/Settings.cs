@@ -11,6 +11,9 @@ using static Rechnermodul.Utils.Shared.ThemeManager;
 
 namespace Rechnermodul.Utils.Shared
 {
+    /// <summary>
+    /// Settings
+    /// </summary>
     public class Settings
     {
         public FontSerializable FontNormalText { get; set; }
@@ -25,6 +28,9 @@ namespace Rechnermodul.Utils.Shared
         }
     }
 
+    /// <summary>
+    /// Manages the custom application settings
+    /// </summary>
     public static class SettingsManager
     {
         private static readonly string AppDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Rechnermodul-JustForYou";

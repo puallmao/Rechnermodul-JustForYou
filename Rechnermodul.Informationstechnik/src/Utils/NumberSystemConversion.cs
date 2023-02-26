@@ -309,6 +309,11 @@ namespace Rechnermodul.Informationstechnik.Utils
             return toTernary(Convert.ToInt64(input, 16));
         }
 
+        /// <summary>
+        /// Validate the string hex input
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public static bool validateHexInput(string input)
         {
             string whitelist = "0123456789ABCDEF";

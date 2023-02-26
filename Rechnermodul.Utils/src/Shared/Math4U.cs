@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Rechnermodul.Utils.Shared
 {
+    /// <summary>
+    /// Performs certan math operations
+    /// </summary>
     public static class Math4U
     {
         public static float Round(float n, int decimals)

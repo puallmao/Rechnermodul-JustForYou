@@ -5,6 +5,10 @@ using System.Text.Json.Serialization;
 
 namespace Rechnermodul.Utils.Shared
 {
+    /// <summary>
+    /// JSON Converter for the DataType Color
+    /// Allows for the Serialization of colors
+    /// </summary>
     public class JsonColorConverter : JsonConverter<Color>
     {
         public override void Write(Utf8JsonWriter writer, Color value, JsonSerializerOptions options)

@@ -18,11 +18,21 @@ namespace Rechnermodul.Main.View
             GrundrechnerConnector.Grundrechner = new Grundrechner.View.FRM_Grundrechner();
         }
 
+        /// <summary>
+        /// Change settings
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SettingsChanged(object sender, EventArgs e)
         {
             SettingsManager.ApplySettingsToForm(this);
         }
 
+        /// <summary>
+        /// Add new entrie to history List Box
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="entry"></param>
         private void NewEntryEvent(object sender, string entry)
         {
             LB_history.Items.Add(entry);
@@ -86,6 +96,7 @@ namespace Rechnermodul.Main.View
 
         private void TSMI_settings_Click(object sender, EventArgs e)
         {
+            // Open settings
             FRM_Settings FRM_Settings = new FRM_Settings();
             FRM_Settings.ShowDialog();
         }

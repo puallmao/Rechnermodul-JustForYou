@@ -23,12 +23,19 @@ namespace Rechnermodul.Kreditberechnung.View
             GB_ratenhoehe.Enabled = true;
         }
 
+        /// <summary>
+        /// Change settings
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SettingsChanged(object sender, EventArgs e)
         {
             SettingsManager.ApplySettingsToForm(this);
         }
+
         private void FRM_Kreditberechnung_Load(object sender, EventArgs e)
         {
+            // Open eingabemodul
             eingabemodul = new FRM_Eingabemodul();
             eingabemodul.EnterEvent += EnterEvent;
             eingabemodul.Show();
@@ -36,9 +43,15 @@ namespace Rechnermodul.Kreditberechnung.View
 
         private void FRM_Kreditberechnung_FormClosing(object sender, FormClosingEventArgs e)
         {
+            // Close eingabemodul
             eingabemodul.Close();
         }
 
+        /// <summary>
+        /// Process the Enter Event of the connected Eingabemodul
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="data"></param>
         private void EnterEvent(object sender, string data)
         {
             Control control = this.ActiveControl;
@@ -190,9 +203,9 @@ namespace Rechnermodul.Kreditberechnung.View
 
         private void TSMI_settings_Click(object sender, EventArgs e)
         {
+            // Open settings
             FRM_Settings FRM_Settings = new FRM_Settings();
             FRM_Settings.ShowDialog();
         }
-
     }
 }

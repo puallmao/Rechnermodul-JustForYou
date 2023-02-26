@@ -172,6 +172,11 @@ namespace Rechnermodul.Informationstechnik.View
             blockTextChangedEvents = false;
         }
 
+        /// <summary>
+        /// Set the binary output
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="inputNumberSystem"></param>
         private void setBinary(string input, numberSystems inputNumberSystem)
         {
             string output = string.Empty;
@@ -191,6 +196,11 @@ namespace Rechnermodul.Informationstechnik.View
             History.AddEntry($"{inputNumberSystem}: {input} zu Binär: {output}");
         }
 
+        /// <summary>
+        /// Set the ternary output
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="inputNumberSystem"></param>
         private void setTernary(string input, numberSystems inputNumberSystem)
         {
             string output = string.Empty;
@@ -210,6 +220,11 @@ namespace Rechnermodul.Informationstechnik.View
             History.AddEntry($"{inputNumberSystem}: {input} zu Ternär: {output}");
         }
 
+        /// <summary>
+        /// Set the octal output
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="inputNumberSystem"></param>
         private void setOctal(string input, numberSystems inputNumberSystem)
         {
             string output = string.Empty;
@@ -229,6 +244,11 @@ namespace Rechnermodul.Informationstechnik.View
             History.AddEntry($"{inputNumberSystem}: {input} zu Oktal: {output}");
         }
 
+        /// <summary>
+        /// Set the decimal output
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="inputNumberSystem"></param>
         private void setDecimal(string input, numberSystems inputNumberSystem)
         {
             string output = string.Empty;
@@ -248,6 +268,11 @@ namespace Rechnermodul.Informationstechnik.View
             History.AddEntry($"{inputNumberSystem}: {input} zu Dezimal: {output}");
         }
 
+        /// <summary>
+        /// Clear TB Inputs
+        /// Ingores one control
+        /// </summary>
+        /// <param name="blockedTextBox"></param>
         private void clearTextBoxInputs(TextBox blockedTextBox)
         {
             if (blockedTextBox != TB_binary)

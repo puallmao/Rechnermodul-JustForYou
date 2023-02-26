@@ -23,6 +23,7 @@ namespace Rechnermodul.Utils.Shared.View
 
         private void SettingsChanged(object sender, EventArgs e)
         {
+            // Change settings
             SettingsManager.ApplySettingsToForm(this);
         }
 

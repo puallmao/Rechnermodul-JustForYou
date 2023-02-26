@@ -18,6 +18,11 @@ namespace Rechnermodul.Eingabemodul.View
             SettingsManager.ApplySettingsToForm(this);
         }
 
+        /// <summary>
+        /// Change Settings
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SettingsChanged(object sender, EventArgs e)
         {
             SettingsManager.ApplySettingsToForm(this);
@@ -25,6 +30,10 @@ namespace Rechnermodul.Eingabemodul.View
 
         public event EventHandler<string> EnterEvent;
 
+        /// <summary>
+        /// Append Char to Input TB
+        /// </summary>
+        /// <param name="input"></param>
         private void appendCharToInput(char input)
         {
             TB_input.Text = TB_input.Text + input.ToString();
@@ -238,18 +247,21 @@ namespace Rechnermodul.Eingabemodul.View
 
         private void BTN_inputEnter_Click(object sender, EventArgs e)
         {
+            // Raise Enter Event
             EnterEvent(this, this.TB_input.Text);
             TB_input.Text = String.Empty;
         }
         
         private void BTN_inputNR_Click(object sender, EventArgs e)
         {
+            // Open Grundrechner
             Form FRM_Grundrechner = GrundrechnerConnector.Grundrechner.GetForm();
             FRM_Grundrechner.ShowDialog();
         }
 
         private void TSMI_settings_Click(object sender, EventArgs e)
         {
+            // Open Settings
             FRM_Settings FRM_Settings = new FRM_Settings();
             FRM_Settings.ShowDialog();
         }

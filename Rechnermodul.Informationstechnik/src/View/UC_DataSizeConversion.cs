@@ -17,6 +17,9 @@ namespace Rechnermodul.Informationstechnik.View
             initializeDictionary();
         }
 
+        /// <summary>
+        /// Initialize DataSizes Dictionary
+        /// </summary>
         private void initializeDictionary()
         {
             dictionary.Add(NUM_inputKB, DataSizeConversion.decimalPrefixDataSizes.KiloByte);
@@ -46,6 +49,12 @@ namespace Rechnermodul.Informationstechnik.View
             blockValueChangedEvents = false;
         }
 
+        /// <summary>
+        /// Set the Data Sizes to the controls
+        /// </summary>
+        /// <param name="control"></param>
+        /// <param name="size"></param>
+        /// <param name="obj"></param>
         private void setDataSizes(NumericUpDown control, decimal size, dynamic obj)
         {
             // Block ValueChanged Events
@@ -88,6 +97,10 @@ namespace Rechnermodul.Informationstechnik.View
             History.AddEntry($"Umrechnung: {size} {obj}");
         }
 
+        /// <summary>
+        /// Clear Inputs
+        /// </summary>
+        /// <param name="control"></param>
         private void clearNUM(NumericUpDown control)
         {
             if (control != NUM_inputKB)

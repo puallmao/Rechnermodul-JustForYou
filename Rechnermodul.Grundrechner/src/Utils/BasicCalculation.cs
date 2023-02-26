@@ -9,6 +9,11 @@ namespace Rechnermodul.Grundrechner.Utils
 {
     public static class BasicCalculation
     {
+        /// <summary>
+        /// Split the input of a String Equation
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public static List<string> SplitInput(string input)
         {
             List<string> splitInput = new List<string>();
@@ -41,6 +46,11 @@ namespace Rechnermodul.Grundrechner.Utils
             return splitInput;
         }
 
+        /// <summary>
+        /// Process a String Eqaution
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public static string ProcessStringEquation(List<string> input)
         {
             try
@@ -97,6 +107,11 @@ namespace Rechnermodul.Grundrechner.Utils
             catch { return ""; }
         }
 
+        /// <summary>
+        /// Process Parenthesis in a String Equation
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public static string ProcessParenthesis(string input)
         {
             int openingParenthesis = -1;

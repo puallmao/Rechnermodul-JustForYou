@@ -17,6 +17,11 @@ namespace Rechnermodul.Prozentrechnung.View
             SettingsManager.ApplySettingsToForm(this);
         }
 
+        /// <summary>
+        /// Change settings
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SettingsChanged(object sender, EventArgs e)
         {
             SettingsManager.ApplySettingsToForm(this);
@@ -25,6 +30,7 @@ namespace Rechnermodul.Prozentrechnung.View
         private void FRM_Prozentrechnung_Load(object sender, EventArgs e)
         {
             UCState = 0;
+            // Open eingabemodul
             eingabemodul = new Eingabemodul.View.FRM_Eingabemodul();
             eingabemodul.EnterEvent += EnterEvent;
             eingabemodul.Show();
@@ -36,9 +42,15 @@ namespace Rechnermodul.Prozentrechnung.View
             UC_PercentageCalculation2.Visible = false;
             UC_PriceCalculation.Visible = false;
 
+            // Close eingabemodul
             eingabemodul.Close();
         }
 
+        /// <summary>
+        /// Process the Enter Event of the connected Eingabemodul
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="data"></param>
         private void EnterEvent(object sender, string data)
         {
             UserControl userControl = null;
@@ -61,6 +73,7 @@ namespace Rechnermodul.Prozentrechnung.View
             if (control is NumericUpDown || control is TextBox)
             {
                 control.Text = data;
+                // Move to the next control
                 if (userControl == UC_PercentageCalculation1)
                 {
                     if (control == UC_PercentageCalculation1.NUM_baseValue) UC_PercentageCalculation1.NUM_percentage.Select();
@@ -101,6 +114,7 @@ namespace Rechnermodul.Prozentrechnung.View
 
         private void TSMI_settings_Click(object sender, EventArgs e)
         {
+            // Open settings
             FRM_Settings FRM_Settings = new FRM_Settings();
             FRM_Settings.ShowDialog();
         }

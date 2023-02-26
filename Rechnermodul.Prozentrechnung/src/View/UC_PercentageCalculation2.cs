@@ -17,6 +17,9 @@ namespace Rechnermodul.Prozentrechnung.View
             calcResult();
         }
 
+        /// <summary>
+        /// Calculate and set result
+        /// </summary>
         private void calcResult()
         {
             decimal result;

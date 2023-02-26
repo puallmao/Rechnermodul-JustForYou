@@ -2,6 +2,9 @@
 
 namespace Rechnermodul.Utils.Shared
 {
+    /// <summary>
+    /// Font for JSON Serialization
+    /// </summary>
     public class FontSerializable
     {
         public string FontFamily { get; set; }

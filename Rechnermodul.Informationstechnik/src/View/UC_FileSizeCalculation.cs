@@ -38,17 +38,21 @@ namespace Rechnermodul.Informationstechnik.View
             calcSize();
         }
 
+        /// <summary>
+        /// Calculate the file size
+        /// </summary>
         private void calcSize()
         {
             ulong bytes = 0;
             string decSize = string.Empty;
             string binSize = string.Empty;
 
-            if (RB_calcImage.Checked == true)
+            if (RB_calcImage.Checked == true) // Image
                 bytes = FileSizeCalculation.calculateImageSize((int)NUM_colorDepth.Value, (int)NUM_imageWidth.Value, (int)NUM_imageHeight.Value);
-            else if (RB_calcVideo.Checked == true)
+            else if (RB_calcVideo.Checked == true) // Video
                 bytes = FileSizeCalculation.calculateVideoSize((int)NUM_colorDepth.Value, (int)NUM_imageWidth.Value, (int)NUM_imageHeight.Value, (int)NUM_framesPerSecond.Value, (int)NUM_videoLength.Value);
 
+            // Get correct DataSize Prefix
             if (bytes < 1000000)
             {
                 decSize = Math4U.Round(DataSizeConversion.convertToDecimalPrefix(DataSizeConversion.decimalPrefixDataSizes.KiloByte, bytes), 6).ToString() + " KB";

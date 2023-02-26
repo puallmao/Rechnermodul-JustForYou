@@ -20,6 +20,11 @@ namespace Rechnermodul.Grundrechner.View
 
         public Form GetForm() { return new FRM_Grundrechner(); }
 
+        /// <summary>
+        /// Change Settings
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SettingsChanged(object sender, EventArgs e)
         {
             SettingsManager.ApplySettingsToForm(this);
@@ -27,6 +32,7 @@ namespace Rechnermodul.Grundrechner.View
 
         private void FRM_Grundrechner_Load(object sender, EventArgs e)
         {
+            // Open Eingabemodul
             eingabemodul = new Eingabemodul.View.FRM_Eingabemodul();
             eingabemodul.EnterEvent += EnterEvent;
             eingabemodul.Show();
@@ -34,9 +40,15 @@ namespace Rechnermodul.Grundrechner.View
 
         private void FRM_Grundrechner_FormClosing(object sender, FormClosingEventArgs e)
         {
+            // Close Eingebemodul
             eingabemodul.Close();
         }
 
+        /// <summary>
+        /// Process the Enter Event of the connected Eingabemodul
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="data"></param>
         private void EnterEvent(object sender, string data)
         {
             TB_input.Text = data;
@@ -78,11 +90,13 @@ namespace Rechnermodul.Grundrechner.View
 
         private void BTN_copy_Click(object sender, EventArgs e)
         {
+            // Copy result to clipboard
             Clipboard.SetText(TB_result.Text);           
         }
 
         private void TSMI_settings_Click(object sender, EventArgs e)
         {
+            // Open Settings
             FRM_Settings FRM_Settings = new FRM_Settings();
             FRM_Settings.ShowDialog();
         }
