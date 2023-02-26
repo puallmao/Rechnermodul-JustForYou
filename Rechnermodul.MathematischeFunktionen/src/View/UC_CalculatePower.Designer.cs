@@ -182,8 +182,8 @@ namespace Rechnermodul.MathematischeFunktionen.View
         private System.Windows.Forms.Label LBL_titel;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.NumericUpDown NUM_exponent;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.NumericUpDown NUM_base;
+        public System.Windows.Forms.NumericUpDown NUM_exponent;
+        public System.Windows.Forms.NumericUpDown NUM_base;
     }
 }

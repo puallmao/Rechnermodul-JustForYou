@@ -178,11 +178,11 @@ namespace Rechnermodul.Prozentrechnung.View
 
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.NumericUpDown NUM_percentageValue;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.NumericUpDown NUM_baseValue;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox TB_result;
         private System.Windows.Forms.Label LBL_titel;
+        public System.Windows.Forms.NumericUpDown NUM_percentageValue;
+        public System.Windows.Forms.NumericUpDown NUM_baseValue;
     }
 }

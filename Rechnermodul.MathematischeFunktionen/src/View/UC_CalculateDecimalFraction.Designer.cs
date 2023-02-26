@@ -180,7 +180,7 @@ namespace Rechnermodul.MathematischeFunktionen.View
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.NumericUpDown NUM_denominator;
-        private System.Windows.Forms.NumericUpDown NUM_numerator;
+        public System.Windows.Forms.NumericUpDown NUM_denominator;
+        public System.Windows.Forms.NumericUpDown NUM_numerator;
     }
 }

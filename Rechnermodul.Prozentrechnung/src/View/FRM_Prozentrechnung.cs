@@ -61,6 +61,14 @@ namespace Rechnermodul.Prozentrechnung.View
             if (control is NumericUpDown || control is TextBox)
             {
                 control.Text = data;
+                if (userControl == UC_PercentageCalculation1)
+                {
+                    if (control == UC_PercentageCalculation1.NUM_baseValue) UC_PercentageCalculation1.NUM_percentage.Select();
+                }
+                if (userControl == UC_PercentageCalculation2)
+                {
+                    if (control == UC_PercentageCalculation2.NUM_baseValue) UC_PercentageCalculation2.NUM_percentageValue.Select();
+                }
             }
         }
 

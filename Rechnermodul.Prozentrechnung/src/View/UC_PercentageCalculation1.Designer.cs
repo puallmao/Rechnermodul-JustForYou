@@ -233,9 +233,7 @@ namespace Rechnermodul.Prozentrechnung.View
 
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.NumericUpDown NUM_percentage;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.NumericUpDown NUM_baseValue;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton RB_calcPercentageValue;
         private System.Windows.Forms.RadioButton RB_subtractPercentage;
@@ -243,5 +241,7 @@ namespace Rechnermodul.Prozentrechnung.View
         private System.Windows.Forms.Label LBL_titel;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox TB_result;
+        public System.Windows.Forms.NumericUpDown NUM_percentage;
+        public System.Windows.Forms.NumericUpDown NUM_baseValue;
     }
 }

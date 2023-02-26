@@ -14,7 +14,7 @@ namespace Rechnermodul.Informationstechnik.Utils
         /// <param name="imageNum"></param>
         public static ulong calculateImageSize(int colorDepth, int width, int heigth)
         {
-            return (ulong)Math4U.Ceiling(((colorDepth * (width * heigth)) / 8));
+            return (ulong)Math4U.Ceiling((decimal)((colorDepth * (width * heigth)) / 8));
         }
 
         /// <summary>

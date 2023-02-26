@@ -170,8 +170,8 @@ namespace Rechnermodul.MathematischeFunktionen.View
         private System.Windows.Forms.Label LBL_titel;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.NumericUpDown NUM_rangeTo;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.NumericUpDown NUM_rangeFrom;
+        public System.Windows.Forms.NumericUpDown NUM_rangeTo;
+        public System.Windows.Forms.NumericUpDown NUM_rangeFrom;
     }
 }

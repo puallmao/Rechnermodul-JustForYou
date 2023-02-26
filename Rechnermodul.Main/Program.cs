@@ -38,12 +38,12 @@ namespace Rechnermodul.Main
         {
             ModuleController.registerModule(new FRM_Grundrechner());
             ModuleController.registerModule(new FRM_Eingabemodul());
-            ModuleController.registerModule(new FRM_Prozentrechnung());
-            ModuleController.registerModule(new FRM_Kreditberechnung());
-            ModuleController.registerModule(new FRM_Geometrie());
-            ModuleController.registerModule(new FRM_MathematischeFunktionen());
-            ModuleController.registerModule(new FRM_Schule());
             ModuleController.registerModule(new FRM_Informationstechnik());
+            ModuleController.registerModule(new FRM_Prozentrechnung());
+            ModuleController.registerModule(new FRM_MathematischeFunktionen());
+            ModuleController.registerModule(new FRM_Kreditberechnung());
+            //ModuleController.registerModule(new FRM_Geometrie());
+            //ModuleController.registerModule(new FRM_Schule());
         }
     }
 }

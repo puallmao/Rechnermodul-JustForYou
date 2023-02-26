@@ -50,6 +50,18 @@ namespace Rechnermodul.MathematischeFunktionen.View
             if (control is NumericUpDown || control is TextBox)
             {
                 control.Text = data;
+                if (userControl == UC_CalculatePower)
+                {
+                    if (control == UC_CalculatePower.NUM_base) UC_CalculatePower.NUM_exponent.Select();
+                }
+                if (userControl == UC_CalculatePrimeNumbers)
+                {
+                    if (control == UC_CalculatePrimeNumbers.NUM_rangeFrom) UC_CalculatePrimeNumbers.NUM_rangeTo.Select();
+                }
+                if (userControl == UC_CalculateDecimalFraction)
+                {
+                    if (control == UC_CalculateDecimalFraction.NUM_numerator) UC_CalculateDecimalFraction.NUM_denominator.Select();
+                }
             }
         }
 

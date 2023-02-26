@@ -37,5 +37,11 @@ namespace Rechnermodul.Utils.Shared
             int x = ((int)n) + 1;
             return (double)x;
         }
+
+        public static decimal Ceiling(decimal n)
+        {
+            int x = ((int)n) + 1;
+            return (decimal)x;
+        }
     }
 }
