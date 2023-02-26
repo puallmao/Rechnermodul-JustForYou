@@ -104,7 +104,11 @@ namespace Rechnermodul.Kreditberechnung.View
 
         private bool validkreditbetrag(decimal kreditbetrag)
         {
-            return true;
+            if (kreditbetrag > 0)
+            {
+                return true;
+            }
+            return false;
         }
 
         private void button_calc_Click(object sender, EventArgs e)
@@ -119,8 +123,11 @@ namespace Rechnermodul.Kreditberechnung.View
                 {
                     if (Decimal.TryParse(input_zinssatz.Text, out testZinssatz) && validZinssatz(Convert.ToDecimal(input_zinssatz.Text)))
                     {
-                        //validate beide Zahlen, zinssatz muss größer als >0 sein und insgesamt 6 Nachkommastellen
+                        //validate beide Zahlen, (kreditbetrag + zinssatz) dürfen nur 6 Nachkommastellen haben
+                        decimal zinssatz = Convert.ToDecimal(input_zinssatz.Text);
+                        decimal kreditbetrag = Convert.ToDecimal(input_kreditbetrag.Text);
 
+                        decimal zinsenGes = kreditbetrag * zinssatz / 100;
                     }
                     else
                     {
@@ -133,7 +140,14 @@ namespace Rechnermodul.Kreditberechnung.View
                     decimal testLaufzeit;
                     if (Decimal.TryParse(input_zinssatz.Text, out testZinssatz) && Decimal.TryParse(input_laufzeit.Text, out testLaufzeit) && (validZinssatz(Convert.ToDecimal(input_zinssatz.Text))) && (validLaufzeit(Convert.ToDecimal(input_laufzeit.Text))))
                     {
-                        //validate beide Zahlen, zinssatz muss größer als >0 sein
+                        //validate Zahlen, (kreditbetrag + zinssatz + laufzeit) dürfen nur 6 Nachkommastellen haben
+                        decimal laufzeit = Convert.ToDecimal(input_laufzeit.Text);
+                        decimal zinssatz = Convert.ToDecimal(input_zinssatz.Text);
+                        decimal kreditbetrag = Convert.ToDecimal(input_kreditbetrag.Text);
+
+                        decimal zinsenGes = kreditbetrag * zinssatz / 100;
+                        decimal ratenhoehe = (kreditbetrag + zinsenGes) / laufzeit;
+
                     }
                     else
                     {
@@ -146,7 +160,16 @@ namespace Rechnermodul.Kreditberechnung.View
                     decimal testRatenhoehe;
                     if (Decimal.TryParse(input_zinssatz.Text, out testZinssatz) && Decimal.TryParse(input_ratenhoehe.Text, out testRatenhoehe) && (validZinssatz(Convert.ToDecimal(input_zinssatz.Text))) && (validRatenhoehe(Convert.ToDecimal(input_ratenhoehe.Text))))
                     {
-                        //validate beide Zahlen, zinssatz muss größer als >0 sein
+                        //validate Zahlen, (kreditbetrag + zinssatz + ratenhoehe) dürfen nur 6 Nachkommastellen haben
+                        decimal ratenhoehe = Convert.ToDecimal(input_ratenhoehe.Text);
+                        decimal zinssatz = Convert.ToDecimal(input_zinssatz.Text);
+                        decimal kreditbetrag = Convert.ToDecimal(input_kreditbetrag.Text);
+
+                        decimal zinsenGes = kreditbetrag * zinssatz / 100;
+                        // muss aufgerundet sein
+                        decimal laufzeit = Math.Ceiling((kreditbetrag + zinsenGes) / ratenhoehe);
+                        decimal schlussrate = kreditbetrag % ratenhoehe;
+
                     }
                     else
                     {
@@ -161,7 +184,7 @@ namespace Rechnermodul.Kreditberechnung.View
             }
             else
             {
-                MessageBox.Show("Das ist doch alles toll hier");
+                // kreditbetrag invalid
             }
         }
     }
