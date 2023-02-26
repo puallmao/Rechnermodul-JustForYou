@@ -29,12 +29,166 @@ namespace Rechnermodul.Informationstechnik.View
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.BTN_fileSizeCalculation = new System.Windows.Forms.Button();
+            this.BTN_numberSystemConversion = new System.Windows.Forms.Button();
+            this.BTN_dataSizeConversion = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.LBL_noFunctionSelected = new System.Windows.Forms.Label();
+            this.MS_default = new System.Windows.Forms.MenuStrip();
+            this.TSMI_settings = new System.Windows.Forms.ToolStripMenuItem();
+            this.UC_NumberSystemConversion = new Rechnermodul.Informationstechnik.View.UC_NumberSystemConversion();
+            this.UC_FileSizeCalculation = new Rechnermodul.Informationstechnik.View.UC_FileSizeCalculation();
+            this.UC_DataSizeConversion = new Rechnermodul.Informationstechnik.View.UC_DataSizeConversion();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.MS_default.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.BTN_fileSizeCalculation);
+            this.groupBox1.Controls.Add(this.BTN_numberSystemConversion);
+            this.groupBox1.Controls.Add(this.BTN_dataSizeConversion);
+            this.groupBox1.Location = new System.Drawing.Point(12, 42);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(559, 91);
+            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Funktionswahl";
+            // 
+            // BTN_fileSizeCalculation
+            // 
+            this.BTN_fileSizeCalculation.Location = new System.Drawing.Point(364, 25);
+            this.BTN_fileSizeCalculation.Name = "BTN_fileSizeCalculation";
+            this.BTN_fileSizeCalculation.Size = new System.Drawing.Size(170, 55);
+            this.BTN_fileSizeCalculation.TabIndex = 2;
+            this.BTN_fileSizeCalculation.Text = "Dateigrößen berechnen";
+            this.BTN_fileSizeCalculation.UseVisualStyleBackColor = true;
+            this.BTN_fileSizeCalculation.Click += new System.EventHandler(this.BTN_fileSizeCalculation_Click);
+            // 
+            // BTN_numberSystemConversion
+            // 
+            this.BTN_numberSystemConversion.Location = new System.Drawing.Point(185, 25);
+            this.BTN_numberSystemConversion.Name = "BTN_numberSystemConversion";
+            this.BTN_numberSystemConversion.Size = new System.Drawing.Size(170, 55);
+            this.BTN_numberSystemConversion.TabIndex = 1;
+            this.BTN_numberSystemConversion.Text = "Zahlensysteme umrechnen";
+            this.BTN_numberSystemConversion.UseVisualStyleBackColor = true;
+            this.BTN_numberSystemConversion.Click += new System.EventHandler(this.BTN_numberSystemConversion_Click);
+            // 
+            // BTN_dataSizeConversion
+            // 
+            this.BTN_dataSizeConversion.Location = new System.Drawing.Point(6, 25);
+            this.BTN_dataSizeConversion.Name = "BTN_dataSizeConversion";
+            this.BTN_dataSizeConversion.Size = new System.Drawing.Size(170, 55);
+            this.BTN_dataSizeConversion.TabIndex = 0;
+            this.BTN_dataSizeConversion.Text = "Datenmengen umrechnen";
+            this.BTN_dataSizeConversion.UseVisualStyleBackColor = true;
+            this.BTN_dataSizeConversion.Click += new System.EventHandler(this.BTN_dataSizeConversion_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.UC_NumberSystemConversion);
+            this.groupBox2.Controls.Add(this.UC_FileSizeCalculation);
+            this.groupBox2.Controls.Add(this.UC_DataSizeConversion);
+            this.groupBox2.Controls.Add(this.LBL_noFunctionSelected);
+            this.groupBox2.Location = new System.Drawing.Point(12, 139);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(559, 418);
+            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Funktion";
+            // 
+            // LBL_noFunctionSelected
+            // 
+            this.LBL_noFunctionSelected.AutoSize = true;
+            this.LBL_noFunctionSelected.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_noFunctionSelected.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.LBL_noFunctionSelected.Location = new System.Drawing.Point(167, 222);
+            this.LBL_noFunctionSelected.Name = "LBL_noFunctionSelected";
+            this.LBL_noFunctionSelected.Size = new System.Drawing.Size(213, 20);
+            this.LBL_noFunctionSelected.TabIndex = 0;
+            this.LBL_noFunctionSelected.Text = "Noch keine Funktion gewählt";
+            // 
+            // MS_default
+            // 
+            this.MS_default.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.MS_default.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.MS_default.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TSMI_settings});
+            this.MS_default.Location = new System.Drawing.Point(0, 0);
+            this.MS_default.Name = "MS_default";
+            this.MS_default.Size = new System.Drawing.Size(583, 33);
+            this.MS_default.TabIndex = 5;
+            // 
+            // TSMI_settings
+            // 
+            this.TSMI_settings.Name = "TSMI_settings";
+            this.TSMI_settings.Size = new System.Drawing.Size(132, 29);
+            this.TSMI_settings.Text = "Einstellungen";
+            this.TSMI_settings.Click += new System.EventHandler(this.TSMI_settings_Click);
+            // 
+            // UC_NumberSystemConversion
+            // 
+            this.UC_NumberSystemConversion.Location = new System.Drawing.Point(7, 26);
+            this.UC_NumberSystemConversion.Name = "UC_NumberSystemConversion";
+            this.UC_NumberSystemConversion.Size = new System.Drawing.Size(310, 367);
+            this.UC_NumberSystemConversion.TabIndex = 3;
+            this.UC_NumberSystemConversion.Visible = false;
+            // 
+            // UC_FileSizeCalculation
+            // 
+            this.UC_FileSizeCalculation.Location = new System.Drawing.Point(5, 26);
+            this.UC_FileSizeCalculation.Name = "UC_FileSizeCalculation";
+            this.UC_FileSizeCalculation.Size = new System.Drawing.Size(553, 386);
+            this.UC_FileSizeCalculation.TabIndex = 2;
+            this.UC_FileSizeCalculation.Visible = false;
+            // 
+            // UC_DataSizeConversion
+            // 
+            this.UC_DataSizeConversion.Location = new System.Drawing.Point(5, 26);
+            this.UC_DataSizeConversion.Name = "UC_DataSizeConversion";
+            this.UC_DataSizeConversion.Size = new System.Drawing.Size(553, 367);
+            this.UC_DataSizeConversion.TabIndex = 1;
+            this.UC_DataSizeConversion.Visible = false;
+            // 
+            // FRM_Informationstechnik
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(583, 568);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.MS_default);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MainMenuStrip = this.MS_default;
+            this.Name = "FRM_Informationstechnik";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Informationstechnik";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FRM_Informationstechnik_FormClosing);
+            this.Load += new System.EventHandler(this.FRM_Informationstechnik_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.MS_default.ResumeLayout(false);
+            this.MS_default.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button BTN_fileSizeCalculation;
+        private System.Windows.Forms.Button BTN_numberSystemConversion;
+        private System.Windows.Forms.Button BTN_dataSizeConversion;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label LBL_noFunctionSelected;
+        private View.UC_NumberSystemConversion UC_NumberSystemConversion;
+        private View.UC_FileSizeCalculation UC_FileSizeCalculation;
+        private View.UC_DataSizeConversion UC_DataSizeConversion;
+        private System.Windows.Forms.MenuStrip MS_default;
+        private System.Windows.Forms.ToolStripMenuItem TSMI_settings;
     }
 }

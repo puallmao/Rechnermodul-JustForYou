@@ -38,6 +38,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,11 +52,42 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\Utils\Calculation.cs" />
     <Compile Include="src\View\FRM_MathematischeFunktionen.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="src\View\FRM_MathematischeFunktionen.Designer.cs">
       <DependentUpon>FRM_MathematischeFunktionen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\View\UC_CalculateDecimalFraction.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="src\View\UC_CalculateDecimalFraction.Designer.cs">
+      <DependentUpon>UC_CalculateDecimalFraction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\View\UC_CalculateFactorial.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="src\View\UC_CalculateFactorial.Designer.cs">
+      <DependentUpon>UC_CalculateFactorial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\View\UC_CalculatePower.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="src\View\UC_CalculatePower.Designer.cs">
+      <DependentUpon>UC_CalculatePower.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\View\UC_CalculatePrimeNumbers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="src\View\UC_CalculatePrimeNumbers.Designer.cs">
+      <DependentUpon>UC_CalculatePrimeNumbers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\View\UC_CalculateSqrt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="src\View\UC_CalculateSqrt.Designer.cs">
+      <DependentUpon>UC_CalculateSqrt.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -66,6 +98,24 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="src\View\FRM_MathematischeFunktionen.resx">
+      <DependentUpon>FRM_MathematischeFunktionen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\View\UC_CalculateDecimalFraction.resx">
+      <DependentUpon>UC_CalculateDecimalFraction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\View\UC_CalculateFactorial.resx">
+      <DependentUpon>UC_CalculateFactorial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\View\UC_CalculatePower.resx">
+      <DependentUpon>UC_CalculatePower.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\View\UC_CalculatePrimeNumbers.resx">
+      <DependentUpon>UC_CalculatePrimeNumbers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\View\UC_CalculateSqrt.resx">
+      <DependentUpon>UC_CalculateSqrt.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -79,6 +129,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Rechnermodul.Eingabemodul\Rechnermodul.Eingabemodul.csproj">
+      <Project>{082d17b2-d8eb-4666-99c3-6907860c8b66}</Project>
+      <Name>Rechnermodul.Eingabemodul</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Rechnermodul.Utils\Rechnermodul.Utils.csproj">
+      <Project>{85d8e49d-0b77-4f2b-b1f7-85cdbd8bd05d}</Project>
+      <Name>Rechnermodul.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
