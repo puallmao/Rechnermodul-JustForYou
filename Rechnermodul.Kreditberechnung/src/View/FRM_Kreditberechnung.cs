@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rechnermodul.Kreditberechnung.Utils;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,172 +20,138 @@ namespace Rechnermodul.Kreditberechnung.View
         public FRM_Kreditberechnung()
         {
             InitializeComponent();
-            input_kreditbetrag.ReadOnly = true;
-            input_zinssatz.ReadOnly = true;
-            input_laufzeit.ReadOnly = true;
-            input_ratenhoehe.ReadOnly = true;
+            TB_kreditbetrag.ReadOnly = true;
+            TB_zinssatz.ReadOnly = true;
+            TB_laufzeit.ReadOnly = true;
+            TB_ratenhoehe.ReadOnly = true;
         }
 
-        private void button_creditOnePayment_Click(object sender, EventArgs e)
+        private void BTN_creditOnePayment_Click(object sender, EventArgs e)
         {
             calcValue = 1;
-            input_kreditbetrag.ReadOnly = false;
-            input_zinssatz.ReadOnly = false;
-            input_laufzeit.ReadOnly = true;
-            input_ratenhoehe.ReadOnly = true;
+            TB_kreditbetrag.ReadOnly = false;
+            TB_zinssatz.ReadOnly = false;
+            TB_laufzeit.ReadOnly = false;
+            TB_ratenhoehe.ReadOnly = true;
         }
 
-        private void button_creditTimed_Click(object sender, EventArgs e)
+        private void BTN_creditTimed_Click(object sender, EventArgs e)
         {
             calcValue = 2;
-            input_kreditbetrag.ReadOnly = false;
-            input_zinssatz.ReadOnly = false;
-            input_laufzeit.ReadOnly = false;
-            input_ratenhoehe.ReadOnly = true;
+            TB_kreditbetrag.ReadOnly = false;
+            TB_zinssatz.ReadOnly = false;
+            TB_laufzeit.ReadOnly = false;
+            TB_ratenhoehe.ReadOnly = true;
         }
 
-        private void button_creditRateAmount_Click(object sender, EventArgs e)
+        private void BTN_creditRateAmount_Click(object sender, EventArgs e)
         {
             calcValue = 3;
-            input_kreditbetrag.ReadOnly = false;
-            input_zinssatz.ReadOnly = false;
-            input_laufzeit.ReadOnly = true;
-            input_ratenhoehe.ReadOnly = false;
+            TB_kreditbetrag.ReadOnly = false;
+            TB_zinssatz.ReadOnly = false;
+            TB_laufzeit.ReadOnly = true;
+            TB_ratenhoehe.ReadOnly = false;
         }
-
-        private void input_kreditbetrag_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void input_zinssatz_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void input_laufzeit_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void input_ratenhoehe_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private bool validZinssatz(decimal zinssatz = 0)
-        {
-            // Zinssatz muss zwischen 0% und 100% liegen
-            if (zinssatz <= 0 && zinssatz > 100)
-            {
-                // Create Message box - FEHLER
-                return false;
-            }
-            return true;
-        }
-
-        private bool validRatenhoehe(decimal ratenhoehe = 0)
-        {
-            if (ratenhoehe <= 0)
-            {
-                // Create Message box - FEHLER
-                return false;
-            }
-            return true;
-        }
-        private bool validLaufzeit(decimal laufzeit = 0)
-        {
-            // laufzeit hat keine Nachkommastellen, sind nur volle monate
-            if (laufzeit <= 0 || laufzeit != Convert.ToDecimal(Convert.ToInt64(laufzeit)))
-            {
-                // Create Message box - FEHLER
-                return false;
-            }
-            return true;
-        }
-
-        private bool validkreditbetrag(decimal kreditbetrag)
-        {
-            if (kreditbetrag > 0)
-            {
-                return true;
-            }
-            return false;
-        }
-
-        private void button_calc_Click(object sender, EventArgs e)
+                
+        private void BTN_calc_Click(object sender, EventArgs e)
         {
             decimal testKreditbetragDecimal;
 
-            if (Decimal.TryParse(input_kreditbetrag.Text, out testKreditbetragDecimal) && validkreditbetrag(Convert.ToDecimal(input_kreditbetrag.Text)))
+            if (Decimal.TryParse(TB_kreditbetrag.Text, out testKreditbetragDecimal) && CreditCalculation.ValidateKreditbetrag(Convert.ToDecimal(TB_kreditbetrag.Text)))
             {
                 // Kredit mit einer Rückzahlung
                 decimal testZinssatz;
                 if (calcValue == 1)
                 {
-                    if (Decimal.TryParse(input_zinssatz.Text, out testZinssatz) && validZinssatz(Convert.ToDecimal(input_zinssatz.Text)))
+                    decimal testLaufzeit;
+                    if (Decimal.TryParse(TB_zinssatz.Text, out testZinssatz) && Decimal.TryParse(TB_laufzeit.Text, out testLaufzeit) && CreditCalculation.ValidateZinssatz(Convert.ToDecimal(TB_zinssatz.Text)) && CreditCalculation.ValidateLaufzeit(Convert.ToDecimal(TB_laufzeit.Text)))
                     {
                         //validate beide Zahlen, (kreditbetrag + zinssatz) dürfen nur 6 Nachkommastellen haben
-                        decimal zinssatz = Convert.ToDecimal(input_zinssatz.Text);
-                        decimal kreditbetrag = Convert.ToDecimal(input_kreditbetrag.Text);
+                        decimal zinssatz = Convert.ToDecimal(TB_zinssatz.Text);
+                        decimal kreditbetrag = Convert.ToDecimal(TB_kreditbetrag.Text);
+                        decimal laufzeit = Convert.ToDecimal(TB_laufzeit.Text);
 
-                        decimal zinsenGes = kreditbetrag * zinssatz / 100;
+                        //decimal zinsenGes = kreditbetrag * zinssatz / 100;
+                        decimal zinsenGes = kreditbetrag * (((zinssatz / 12) / 100) * laufzeit);
+
+                        TB_resultZinssatz.Text = zinssatz.ToString();
+                        TB_resultKreditbetrag.Text = kreditbetrag.ToString();
+                        TB_resultZinsenGesamt.Text = zinsenGes.ToString();
+                        TB_resultLaufzeit.Text = laufzeit.ToString();
                     }
                     else
                     {
                         //Errorcode 1: nicht alle nötigen Parameter zur berechnung sind angegeben
+                        MessageBox.Show("Es wurden nicht alle nötigen Parameter zur Berechnung angegeben", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 // Ratenkredit mit angegebener Laufzeit
                 else if (calcValue == 2)
                 {
                     decimal testLaufzeit;
-                    if (Decimal.TryParse(input_zinssatz.Text, out testZinssatz) && Decimal.TryParse(input_laufzeit.Text, out testLaufzeit) && (validZinssatz(Convert.ToDecimal(input_zinssatz.Text))) && (validLaufzeit(Convert.ToDecimal(input_laufzeit.Text))))
+                    if (Decimal.TryParse(TB_zinssatz.Text, out testZinssatz) && Decimal.TryParse(TB_laufzeit.Text, out testLaufzeit) && (CreditCalculation.ValidateZinssatz(Convert.ToDecimal(TB_zinssatz.Text))) && (CreditCalculation.ValidateLaufzeit(Convert.ToDecimal(TB_laufzeit.Text))))
                     {
                         //validate Zahlen, (kreditbetrag + zinssatz + laufzeit) dürfen nur 6 Nachkommastellen haben
-                        decimal laufzeit = Convert.ToDecimal(input_laufzeit.Text);
-                        decimal zinssatz = Convert.ToDecimal(input_zinssatz.Text);
-                        decimal kreditbetrag = Convert.ToDecimal(input_kreditbetrag.Text);
+                        decimal laufzeit = Convert.ToDecimal(TB_laufzeit.Text);
+                        decimal zinssatz = Convert.ToDecimal(TB_zinssatz.Text);
+                        decimal kreditbetrag = Convert.ToDecimal(TB_kreditbetrag.Text);
 
-                        decimal zinsenGes = kreditbetrag * zinssatz / 100;
+                        //decimal zinsenGes = kreditbetrag * zinssatz / 100;
+                        decimal zinsenGes = kreditbetrag * (((zinssatz / 12) / 100) * (laufzeit/2));
                         decimal ratenhoehe = (kreditbetrag + zinsenGes) / laufzeit;
 
+                        TB_resultLaufzeit.Text = laufzeit.ToString();
+                        TB_resultZinssatz.Text = zinssatz.ToString();
+                        TB_resultKreditbetrag.Text = kreditbetrag.ToString();
+                        TB_resultZinsenGesamt.Text = zinsenGes.ToString();
+                        TB_resultRatenhoehe.Text = ratenhoehe.ToString();
                     }
                     else
                     {
                         //Errorcode 1: nicht alle nötigen Parameter zur berechnung sind angegeben
+                        MessageBox.Show("Es wurden nicht alle nötigen Parameter zur Berechnung angegeben", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 // Ratenkredit mit angegebener Ratenhöhe
                 else if (calcValue == 3)
                 {
                     decimal testRatenhoehe;
-                    if (Decimal.TryParse(input_zinssatz.Text, out testZinssatz) && Decimal.TryParse(input_ratenhoehe.Text, out testRatenhoehe) && (validZinssatz(Convert.ToDecimal(input_zinssatz.Text))) && (validRatenhoehe(Convert.ToDecimal(input_ratenhoehe.Text))))
+                    if (Decimal.TryParse(TB_zinssatz.Text, out testZinssatz) && Decimal.TryParse(TB_ratenhoehe.Text, out testRatenhoehe) && (CreditCalculation.ValidateZinssatz(Convert.ToDecimal(TB_zinssatz.Text))) && (CreditCalculation.ValidateRatenhoehe(Convert.ToDecimal(TB_ratenhoehe.Text))))
                     {
                         //validate Zahlen, (kreditbetrag + zinssatz + ratenhoehe) dürfen nur 6 Nachkommastellen haben
-                        decimal ratenhoehe = Convert.ToDecimal(input_ratenhoehe.Text);
-                        decimal zinssatz = Convert.ToDecimal(input_zinssatz.Text);
-                        decimal kreditbetrag = Convert.ToDecimal(input_kreditbetrag.Text);
+                        decimal ratenhoehe = Convert.ToDecimal(TB_ratenhoehe.Text);
+                        decimal zinssatz = Convert.ToDecimal(TB_zinssatz.Text);
+                        decimal kreditbetrag = Convert.ToDecimal(TB_kreditbetrag.Text);
 
                         decimal zinsenGes = kreditbetrag * zinssatz / 100;
                         // muss aufgerundet sein
                         decimal laufzeit = Math.Ceiling((kreditbetrag + zinsenGes) / ratenhoehe);
                         decimal schlussrate = kreditbetrag % ratenhoehe;
 
+                        TB_resultRatenhoehe.Text = ratenhoehe.ToString();
+                        TB_resultZinssatz.Text = zinssatz.ToString();
+                        TB_resultKreditbetrag.Text = kreditbetrag.ToString();
+                        TB_resultZinsenGesamt.Text = zinsenGes.ToString();
+                        TB_resultLaufzeit.Text = laufzeit.ToString();
+                        TB_resultSchlussrate.Text = schlussrate.ToString();
                     }
                     else
                     {
                         //Errorcode 1: nicht alle nötigen Parameter zur berechnung sind angegeben
+                        MessageBox.Show("Es wurden nicht alle nötigen Parameter zur Berechnung angegeben", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 // unbekannte/nicht ausgewählte Berechnungsart
                 else
                 {
                     //return "Error: Berechnungsmethode unbekannt oder nicht ausgewählt"
+                    MessageBox.Show("Berechnungsmethode unbekannt oder nicht ausgewählt", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
                 // kreditbetrag invalid
+                MessageBox.Show("Kreditbetrag fehlerhaft", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\Utils\CreditCalculation.cs" />
     <Compile Include="src\View\FRM_Kreditberechnung.cs">
       <SubType>Form</SubType>
     </Compile>
