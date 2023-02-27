@@ -65,7 +65,7 @@ namespace Rechnermodul.Grundrechner.View
             {
                 result = result.Replace(" ", "");
                 int openParenthesisCount = result.Count(x => x == '(');
-                int closedParenthesisCount = result.Count(x => x == '(');
+                int closedParenthesisCount = result.Count(x => x == ')');
 
                 // Check if equation contains '(' or ')'
                 if (result.Contains("(") || result.Contains(")"))

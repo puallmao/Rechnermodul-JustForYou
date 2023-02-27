@@ -14,14 +14,14 @@ namespace Rechnermodul.Utils.Shared
         public static float Round(float n, int decimals)
         {
             float d = (float)Pow(10, decimals);
-            int i = (int)((n * d) + 0.5f);
+            Int64 i = (Int64)((n * d) + 0.5f);
             return i / d;
         }
 
         public static decimal Round(decimal n, int decimals)
         {
             decimal d = (decimal)Pow(10, decimals);
-            int i = (int)((n * d) + 0.5m);
+            Int64 i = (Int64)((n * d) + 0.5m);
             return i / d;
         }
 
