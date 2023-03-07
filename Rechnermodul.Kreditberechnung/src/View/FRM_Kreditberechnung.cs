@@ -104,7 +104,7 @@ namespace Rechnermodul.Kreditberechnung.View
                 if (calcValue == 1)
                 {
                     decimal testLaufzeit;
-                    if (Decimal.TryParse(TB_zinssatz.Text, out testZinssatz) && CreditCalculation.ValidateZinssatz(Convert.ToDecimal(TB_zinssatz.Text)) && CreditCalculation.ValidateLaufzeit(Convert.ToDecimal(TB_laufzeit.Text)))
+                    if (Decimal.TryParse(TB_zinssatz.Text, out testZinssatz) && CreditCalculation.ValidateZinssatz(Convert.ToDecimal(TB_zinssatz.Text)))
                     {
                         //validate beide Zahlen, (kreditbetrag + zinssatz) dürfen nur 6 Nachkommastellen haben
                         decimal zinssatz = Math4U.Round(Convert.ToDecimal(TB_zinssatz.Text), 6);
